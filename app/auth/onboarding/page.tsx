@@ -19,7 +19,7 @@ const page = () => {
       ) : step === "firstbank" ? (
         <FirstBankNTBOnboarding />
       ) : step === "link_only" ? (
-        <BankAccountLinkingDemo />
+        <BankAccountLinkingDemo handleBack={() => setStep("entry")} />
       ) : null}
     </div>
   );

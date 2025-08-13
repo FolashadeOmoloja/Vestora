@@ -11,6 +11,7 @@ import {
 import LeftPanelSlide from "../../components/ui/LeftPanelSlide";
 import OTPInput from "../../components/signup/OTPInput";
 import { useRouter } from "next/navigation";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export default function FirstBankNTBOnboarding() {
   const [step, setStep] = useState(1);
@@ -178,15 +179,17 @@ export default function FirstBankNTBOnboarding() {
             <Button
               onClick={prevStep}
               variant="outline"
-              className="min-w-[162px]"
+              className="min-w-[200px] flex items-center justify-center"
             >
+              <ArrowLeft className="w-5 h-5 mr-2" />
               Back
             </Button>
             <Button
-              className="bg-[#00205B] text-white hover:bg-[#001a4d]"
+              className="min-w-[200px] flex items-center justify-center"
               type="submit"
             >
               Complete Signup
+              <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </div>
         </div>

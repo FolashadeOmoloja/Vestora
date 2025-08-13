@@ -10,6 +10,17 @@ import {
   Loader2,
 } from "lucide-react";
 import PersonalDetailsDemo from "./PersonalDetails";
+import {
+  FaFingerprint,
+  FaKey,
+  FaRegAddressCard,
+  FaLink,
+} from "react-icons/fa6";
+import ProgressBar from "@/app/components/ui/ProgressBar";
+import Button from "@/app/components/ui/Button";
+import DocumentUpload from "./DocumentUpload";
+import OTPInput from "@/app/components/signup/OTPInput";
+import { useRouter } from "next/navigation";
 
 // Types
 interface BankAccountLinkingProps {
@@ -144,6 +155,7 @@ const BankAccountLinking = ({
         accountNumber,
         accountName,
       });
+      setStep(2);
     }
   };
 
@@ -154,65 +166,49 @@ const BankAccountLinking = ({
     accountNumber &&
     accountName;
 
+  const [step, setStep] = useState(1);
+  const steps = [
+    { label: "Link", icon: <FaLink /> },
+    { label: "Details", icon: <FaFingerprint /> },
+    { label: "Documents", icon: <FaRegAddressCard /> },
+    { label: "Verification", icon: <FaKey /> },
+  ];
+
+  const [formData, setFormData] = useState({
+    otp: "",
+  });
+  const handleOTPChange = (value: string) => {
+    setFormData({ ...formData, otp: value });
+  };
+  const router = useRouter();
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    router.push("/dashboard");
+  };
   return (
-    <div className="min-h-screen basis-1/2">
-      <div className="max-w-2xl mx-auto p-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-3xl font-semibold text-[#002C6C] mb-4">
-            Link Your Bank Account
-          </h1>
-          <p className="text-gray-600 text-sm max-w-md mx-auto">
-            Connect your existing bank account to fund your Treasury Bill
-            investments
-          </p>
-        </div>
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-2xl mx-auto flex-1  p-14 max-sm:p-10 max-sm:px-4 min-h-screen   text-[#002C6C]"
+    >
+      {/* Header */}
+      <div className="text-center mb-12">
+        <h1 className="text-3xl font-semibold text-[#002C6C] mb-4">
+          Link Your Bank Account
+        </h1>
+        <p className="text-gray-600 text-sm max-w-md mx-auto">
+          Connect your existing bank account to fund your Treasury Bill
+          investments
+        </p>
+      </div>
+      <ProgressBar currentStep={step} totalSteps={4} steps={steps} />
 
-        {/* Progress Indicator */}
-        <div className="flex items-center justify-center mb-8">
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center">
-              <div className="w-8 h-8 bg-[#002C6C] text-white rounded-full flex items-center justify-center text-sm font-medium">
-                ✓
-              </div>
-              <span className="ml-2 text-sm font-medium text-[#002C6C]">
-                Select Type
-              </span>
-            </div>
-            <div className="w-8 h-px bg-[#002C6C]"></div>
-            <div className="flex items-center">
-              <div className="w-8 h-8 bg-[#002C6C] text-white rounded-full flex items-center justify-center text-sm font-medium">
-                2
-              </div>
-              <span className="ml-2 text-sm font-medium text-[#002C6C]">
-                Link Account
-              </span>
-            </div>
-            <div className="w-8 h-px bg-gray-300"></div>
-            <div className="flex items-center">
-              <div className="w-8 h-8 bg-gray-300 text-gray-500 rounded-full flex items-center justify-center text-sm font-medium">
-                3
-              </div>
-              <span className="ml-2 text-sm text-gray-500">
-                Personal Details
-              </span>
-            </div>
-            <div className="w-8 h-px bg-gray-300"></div>
-            <div className="flex items-center">
-              <div className="w-8 h-8 bg-gray-300 text-gray-500 rounded-full flex items-center justify-center text-sm font-medium">
-                4
-              </div>
-              <span className="ml-2 text-sm text-gray-500">Verification</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Form Container */}
-        <div className="bg-white rounded-xl shadow-sm p-8">
+      {/* Form Container */}
+      {step === 1 ? (
+        <div className="">
           <div className="space-y-6">
             {/* Bank Selection */}
             <div className="space-y-2">
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label className="block text-sm font-medium">
                 Select Your Bank
               </label>
               <div className="relative">
@@ -228,7 +224,7 @@ const BankAccountLinking = ({
                   }}
                   onFocus={() => setShowDropdown(true)}
                   placeholder="Search for your bank..."
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#002C6C] focus:outline-none transition-colors"
+                  className="form-input"
                 />
                 <Search className="absolute right-3 top-3.5 w-5 h-5 text-gray-400" />
 
@@ -262,7 +258,7 @@ const BankAccountLinking = ({
 
             {/* Account Number */}
             <div className="space-y-2">
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label className="block text-sm font-medium">
                 Account Number
               </label>
               <div className="relative">
@@ -272,10 +268,10 @@ const BankAccountLinking = ({
                   onChange={(e) => handleAccountNumberChange(e.target.value)}
                   placeholder="Enter your 10-digit account number"
                   maxLength={10}
-                  className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
+                  className={`form-input ${
                     error && verificationStatus === "error"
                       ? "border-red-300 focus:border-red-500"
-                      : "border-gray-200 focus:border-[#002C6C]"
+                      : ""
                   }`}
                 />
                 <div className="absolute right-3 top-3.5">
@@ -293,15 +289,11 @@ const BankAccountLinking = ({
             </div>
 
             {/* Verify Button */}
-            <div>
-              <button
+            <div className="mt-2">
+              <Button
                 onClick={handleNameInquiry}
                 disabled={!canVerify}
-                className={`w-full flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all ${
-                  canVerify
-                    ? "bg-blue-600 hover:bg-blue-700 text-white"
-                    : "bg-gray-200 text-gray-500 cursor-not-allowed"
-                }`}
+                className="bg-[#00205B]  text-white hover:bg-[#001a4d]  w-full flex items-center justify-center "
               >
                 {isVerifying ? (
                   <>
@@ -314,7 +306,7 @@ const BankAccountLinking = ({
                     Verify Account Name
                   </>
                 )}
-              </button>
+              </Button>
             </div>
 
             {/* Account Name Display */}
@@ -343,31 +335,27 @@ const BankAccountLinking = ({
             )}
 
             {/* Action Buttons */}
-            <div className="flex space-x-4 pt-6">
-              <button
+            <div className="flex justify-between gap-3 mt-8">
+              <Button
                 onClick={onBack}
-                className="flex-1 flex items-center justify-center px-6 py-4 border-2 border-gray-200 rounded-xl font-medium text-gray-700 hover:border-gray-300 hover:bg-gray-50 transition-all"
+                variant="outline"
+                className="min-w-[200px] flex items-center justify-center"
               >
                 <ArrowLeft className="w-5 h-5 mr-2" />
                 Back
-              </button>
-
-              <button
+              </Button>
+              <Button
                 onClick={handleContinue}
+                className="min-w-[200px] flex items-center justify-center"
                 disabled={!canContinue}
-                className={`flex-2 flex items-center justify-center px-6 py-4 rounded-xl font-medium text-white transition-all ${
-                  canContinue
-                    ? "bg-[#002C6C] hover:bg-[#001a4d] shadow-md hover:shadow-lg"
-                    : "bg-gray-300 cursor-not-allowed"
-                }`}
               >
-                Continue to Personal Details
+                Next
                 <ArrowRight className="w-5 h-5 ml-2" />
-              </button>
+              </Button>
             </div>
 
             {/* Help Text */}
-            <div className="text-center pt-4">
+            <div>
               <p className="text-sm text-gray-500">
                 Having trouble?
                 <span className="text-[#002C6C] font-medium cursor-pointer hover:underline ml-1">
@@ -377,13 +365,47 @@ const BankAccountLinking = ({
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      ) : step === 2 ? (
+        <PersonalDetailsDemo nextStep={step} setStep={setStep} />
+      ) : step === 3 ? (
+        <DocumentUpload setStep={setStep} />
+      ) : step == 4 ? (
+        <div className="space-y-2">
+          <label className="block text-sm font-medium">Enter OTP</label>
+          <OTPInput value={formData.otp} onChange={handleOTPChange} />
+
+          <p className="text-xs text-gray-500 ">
+            Enter the 6-digit code sent to your phone
+          </p>
+          <div className="flex justify-between gap-3 mt-6">
+            <Button
+              onClick={() => setStep(3)}
+              variant="outline"
+              className="min-w-[200px] flex items-center justify-center"
+            >
+              <ArrowLeft className="w-5 h-5 mr-2" />
+              Back
+            </Button>
+            <Button
+              className="min-w-[200px] flex items-center justify-center"
+              type="submit"
+            >
+              Complete Signup
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </div>
+        </div>
+      ) : null}
+    </form>
   );
 };
 
 // Demo component
-export default function BankAccountLinkingDemo() {
+export default function BankAccountLinkingDemo({
+  handleBack,
+}: {
+  handleBack: () => void;
+}) {
   const [step, setStep] = useState<"linking" | "success">("linking");
   const [linkedAccount, setLinkedAccount] = useState<any>(null);
 
@@ -396,15 +418,6 @@ export default function BankAccountLinkingDemo() {
     setLinkedAccount(data);
     setStep("success");
   };
-
-  const handleBack = () => {
-    console.log("Going back to user type selection");
-    alert("Going back to user type selection...");
-  };
-
-  if (step === "success") {
-    return <PersonalDetailsDemo />;
-  }
 
   return <BankAccountLinking onContinue={handleContinue} onBack={handleBack} />;
 }

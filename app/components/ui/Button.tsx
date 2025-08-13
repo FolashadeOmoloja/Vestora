@@ -4,6 +4,7 @@ interface ButtonProps {
   className?: string;
   variant?: "default" | "outline";
   type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 }
 
 const Button = ({
@@ -12,6 +13,7 @@ const Button = ({
   className = "",
   variant = "default",
   type = "button",
+  disabled = false,
 }: ButtonProps) => {
   const baseClasses =
     "p-4  duration-200  rounded-lg text-base font-semibold transition-all duration-200 hover:scale-[0.98] hover:shadow-lg hover:shadow-indigo-500/25";
@@ -23,8 +25,9 @@ const Button = ({
   return (
     <button
       onClick={onClick}
-      className={`${baseClasses} ${variantClasses} ${className}`}
+      className={`${baseClasses} ${variantClasses} ${className} disabled:bg-gray-300  disabled:cursor-not-allowed`}
       type={type}
+      disabled={disabled}
     >
       {children}
     </button>
