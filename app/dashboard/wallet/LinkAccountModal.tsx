@@ -121,9 +121,9 @@ const LinkAccountModal = ({
   return (
     <ModalContainer
       handleClose={handleClose}
-      Icon={<Users className="text-[#002C6C]" size={24} />}
+      Icon={<Users className="text-[#0a2e16]" size={24} />}
       heading={"Link New Account"}
-      text="Add another FirstBank account"
+      text="Add another Vestora account"
     >
       <div className="p-6">
         {/* Step 1: Account Search */}
@@ -132,10 +132,10 @@ const LinkAccountModal = ({
             {/* Info Card */}
             <div className="bg-blue-50 rounded-lg py-2 px-3 border border-blue-200">
               <div className="flex items-center space-x-3">
-                <Shield className="w-5 h-5 text-[#002c6c] mt-0.5 flex-shrink-0" />
+                <Shield className="w-5 h-5 text-[#0a2e16] mt-0.5 flex-shrink-0" />
                 <div className="text-sm">
-                  <p className="text-[#002c6c] text-sm leading-tight">
-                    You can only link FirstBank accounts that belong to you.
+                  <p className="text-[#0a2e16] text-sm leading-tight">
+                    You can only link Vestora accounts that belong to you.
                     We'll verify account ownership before linking.
                   </p>
                 </div>
@@ -144,8 +144,8 @@ const LinkAccountModal = ({
 
             {/* Account Number Input */}
             <div>
-              <label className="block text-sm font-medium text-[#002c6c] mb-2">
-                FirstBank Account Number
+              <label className="block text-sm font-medium text-[#0a2e16] mb-2">
+                Vestora Account Number
               </label>
               <div className="flex space-x-2">
                 <input
@@ -165,7 +165,7 @@ const LinkAccountModal = ({
                 <button
                   onClick={handleAccountSearch}
                   disabled={accountNumber.length !== 10 || isSearching}
-                  className="px-6 py-3 bg-[#002C6C] text-white rounded-lg font-medium disabled:bg-gray-300 disabled:cursor-not-allowed hover:bg-[#003d8a] transition-colors flex items-center"
+                  className="px-6 py-3 bg-[#0a2e16] text-white rounded-lg font-medium disabled:bg-gray-300 disabled:cursor-not-allowed hover:bg-[#1a5c2e] transition-colors flex items-center"
                 >
                   {isSearching ? (
                     <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
@@ -175,7 +175,7 @@ const LinkAccountModal = ({
                 </button>
               </div>
               <p className="text-xs text-gray-500 mt-0.5">
-                Account must be a valid FirstBank account in your name
+                Account must be a valid Vestora account in your name
               </p>
             </div>
 
@@ -270,7 +270,7 @@ const LinkAccountModal = ({
               <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
                 <CreditCard className="w-8 h-8 text-blue-800" />
               </div>
-              <h3 className="text-lg font-semibold text-[#002c6c] mb-2">
+              <h3 className="text-lg font-semibold text-[#0a2e16] mb-2">
                 Verify Account Ownership
               </h3>
               <p className="text-gray-600">
@@ -283,7 +283,7 @@ const LinkAccountModal = ({
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-medium text-[#002c6c]">
+                  <p className="font-medium text-[#0a2e16]">
                     {accountAlias || accountDetails?.accountType}
                   </p>
                   <p className="text-sm text-gray-600">
@@ -291,7 +291,7 @@ const LinkAccountModal = ({
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className="font-medium text-[#002c6c]">
+                  <p className="font-medium text-[#0a2e16]">
                     {formatCurrency(accountDetails?.balance)}
                   </p>
                   <p className="text-xs text-gray-500">Available Balance</p>
@@ -302,12 +302,12 @@ const LinkAccountModal = ({
             {/* PIN Input */}
             <div>
               <div className="flex items-center justify-between mb-3">
-                <label className="block text-sm font-medium text-[#002c6c]">
+                <label className="block text-sm font-medium text-[#0a2e16]">
                   Transaction PIN
                 </label>
                 <button
                   onClick={() => setShowPin(!showPin)}
-                  className="text-sm text-[#002c6c] hover:underline flex items-center space-x-1"
+                  className="text-sm text-[#0a2e16] hover:underline flex items-center space-x-1"
                 >
                   {showPin ? <EyeOff size={16} /> : <Eye size={16} />}
                   <span>{showPin ? "Hide" : "Show"}</span>
@@ -321,7 +321,7 @@ const LinkAccountModal = ({
                     type={showPin ? "number" : "password"}
                     value={digit}
                     onChange={(e) => handlePinChange(index, e.target.value)}
-                    className="w-12 h-12 text-center text-lg font-bold border border-gray-300 rounded-lg focus:border-[#002c6c]"
+                    className="w-12 h-12 text-center text-lg font-bold border border-gray-300 rounded-lg focus:border-[#0a2e16]"
                   />
                 ))}
               </div>
@@ -358,7 +358,7 @@ const LinkAccountModal = ({
               <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-8 h-8 text-blue-800" />
               </div>
-              <h3 className="text-lg font-semibold text-[#002c6c] mb-2">
+              <h3 className="text-lg font-semibold text-[#0a2e16] mb-2">
                 Final Verification
               </h3>
               <p className="text-gray-600 text-sm">
@@ -381,7 +381,7 @@ const LinkAccountModal = ({
                     onChange={(e) =>
                       handleOtpChange(index, e.target.value, otp, setOtp)
                     }
-                    className="w-12 h-12 text-[#002c6c] text-center text-lg font-bold border border-gray-300 rounded-lg focus:border-[#002c6c]"
+                    className="w-12 h-12 text-[#0a2e16] text-center text-lg font-bold border border-gray-300 rounded-lg focus:border-[#0a2e16]"
                   />
                 ))}
               </div>
@@ -449,7 +449,7 @@ const LinkAccountModal = ({
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-gray-600">Current Balance:</span>
-                <span className="font-bold text-[#002c6c]">
+                <span className="font-bold text-[#0a2e16]">
                   {formatCurrency(accountDetails?.balance)}
                 </span>
               </div>
@@ -473,7 +473,7 @@ const LinkAccountModal = ({
               />
               <div className="flex items-center justify-center space-x-2 text-xs text-gray-500">
                 <Shield size={16} />
-                <span>Secured by FirstBank's treasury system</span>
+                <span>Secured by Vestora's treasury system</span>
               </div>
             </div>
           </div>

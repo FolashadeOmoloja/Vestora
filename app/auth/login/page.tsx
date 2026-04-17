@@ -77,11 +77,9 @@ const LoginPage = ({ onLogin, onSignUp, onForgotPassword }: LoginPageProps) => {
   };
 
   return (
-    <div className="min-h-screen flex">
-      {/* Left Side - Creative Design */}
+    <div className="min-h-screen flex bg-white">
       <LeftSide />
 
-      {/* Right Side - Login Form */}
       {step === "otp" ? (
         <LoginOtpVerification
           onVerify={handleOtpVerify}
@@ -89,16 +87,14 @@ const LoginPage = ({ onLogin, onSignUp, onForgotPassword }: LoginPageProps) => {
           email={loginEmail}
         />
       ) : (
-        <div className="flex-1 flex items-center justify-center bg-white p-8">
+        <div className="flex-1 flex items-center justify-center bg-white p-8 lg:border-l border-gray-100">
           <div className="w-full max-w-md">
             {/* Header */}
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-semibold text-[#002C6C] mb-2">
+              <h2 className="text-3xl font-semibold text-[#0a2e16] mb-2">
                 Welcome Back
               </h2>
-              <p className="text-gray-600">
-                Sign in to your FirstBank Treasury account
-              </p>
+              <p className="text-gray-600">Sign in to your Vestora account</p>
             </div>
 
             {/* Login Form */}
@@ -122,7 +118,7 @@ const LoginPage = ({ onLogin, onSignUp, onForgotPassword }: LoginPageProps) => {
                     className={`w-full pl-10 pr-4 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
                       errors.email
                         ? "border-red-300 focus:border-red-500"
-                        : "border-gray-200 focus:border-[#002C6C]"
+                        : "border-gray-200 focus:border-[#3db86a]"
                     }`}
                   />
                 </div>
@@ -153,7 +149,7 @@ const LoginPage = ({ onLogin, onSignUp, onForgotPassword }: LoginPageProps) => {
                     className={`w-full pl-10 pr-12 py-3 border-2 rounded-lg focus:outline-none transition-colors ${
                       errors.password
                         ? "border-red-300 focus:border-red-500"
-                        : "border-gray-200 focus:border-[#002C6C]"
+                        : "border-gray-200 focus:border-[#3db86a]"
                     }`}
                   />
                   <button
@@ -183,7 +179,7 @@ const LoginPage = ({ onLogin, onSignUp, onForgotPassword }: LoginPageProps) => {
                     type="checkbox"
                     checked={rememberMe}
                     onChange={(e) => setRememberMe(e.target.checked)}
-                    className="w-4 h-4 text-[#002C6C] border-gray-300 rounded focus:ring-[#002C6C] focus:ring-2"
+                    className="w-4 h-4 text-[#3db86a] border-gray-300 rounded focus:ring-[#3db86a] focus:ring-2"
                   />
                   <span className="ml-2 text-sm text-gray-600">
                     Remember me
@@ -192,7 +188,7 @@ const LoginPage = ({ onLogin, onSignUp, onForgotPassword }: LoginPageProps) => {
                 <button
                   type="button"
                   onClick={onForgotPassword}
-                  className="text-sm text-[#002C6C] hover:underline font-medium"
+                  className="text-sm text-[#1a5c2e] hover:text-[#3db86a] hover:underline font-medium"
                 >
                   Reset Password
                 </button>
@@ -206,7 +202,7 @@ const LoginPage = ({ onLogin, onSignUp, onForgotPassword }: LoginPageProps) => {
                 className={`w-full flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-white transition-all ${
                   isLoading
                     ? "bg-gray-400 cursor-not-allowed"
-                    : "bg-[#002C6C] hover:bg-[#001a4d] shadow-md hover:shadow-lg"
+                    : "bg-[#3db86a] hover:bg-[#35a55e] shadow-md hover:shadow-lg"
                 }`}
               >
                 {isLoading ? (
@@ -229,7 +225,7 @@ const LoginPage = ({ onLogin, onSignUp, onForgotPassword }: LoginPageProps) => {
                 Don't have an account?{" "}
                 <button
                   onClick={onSignUp}
-                  className="text-[#002C6C] font-semibold hover:underline"
+                  className="text-[#1a5c2e] font-semibold hover:text-[#3db86a] hover:underline"
                 >
                   Sign up here
                 </button>
@@ -237,10 +233,10 @@ const LoginPage = ({ onLogin, onSignUp, onForgotPassword }: LoginPageProps) => {
             </div>
 
             {/* Security Notice */}
-            <div className="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-3">
+            <div className="mt-6 bg-[#e8f5ed] border border-[#c6e8d0] rounded-lg p-3">
               <div className="flex items-center">
-                <Shield className="w-4 h-4 text-blue-600 mr-2" />
-                <p className="text-xs text-blue-700">
+                <Shield className="w-4 h-4 text-[#1a5c2e] mr-2" />
+                <p className="text-xs text-[#1a5c2e]">
                   Your login is secured with 256-bit SSL encryption
                 </p>
               </div>
@@ -321,13 +317,13 @@ const LoginOtpVerification = ({
   const isComplete = otp.every((digit) => digit !== "");
 
   return (
-    <div className="flex items-center justify-center basis-1/2">
+    <div className="flex-1 flex items-center justify-center p-8 lg:border-l border-gray-100">
       <div className="max-w-md ">
         <div className="text-center mb-8">
-          <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Shield className="w-8 h-8 text-[#002C6C]" />
+          <div className="w-16 h-16 bg-[#e8f5ed] rounded-full flex items-center justify-center mx-auto mb-4">
+            <Shield className="w-8 h-8 text-[#1a5c2e]" />
           </div>
-          <h2 className="text-2xl font-semibold text-[#002C6C] mb-2">
+          <h2 className="text-2xl font-semibold text-[#0a2e16] mb-2">
             Login Verification
           </h2>
           <p className="text-gray-600 text-sm">
@@ -350,11 +346,11 @@ const LoginOtpVerification = ({
                 maxLength={1}
                 value={digit}
                 onChange={(e) => handleOtpChange(index, e.target.value)}
-                className={`w-12 h-14 text-center text-xl font-semibold border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#002C6C] focus:border-transparent transition-all ${
+                className={`w-12 h-14 text-center text-xl font-semibold border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3db86a] focus:border-transparent transition-all ${
                   error
                     ? "border-red-300 bg-red-50"
                     : digit
-                    ? "border-[#002C6C] bg-blue-50"
+                    ? "border-[#3db86a] bg-[#e8f5ed]"
                     : "border-gray-200 hover:border-gray-300"
                 }`}
               />
@@ -383,7 +379,7 @@ const LoginOtpVerification = ({
               className={`text-sm font-medium ${
                 timeLeft > 0 || isResending
                   ? "text-gray-400 cursor-not-allowed"
-                  : "text-[#002C6C] hover:underline"
+                  : "text-[#1a5c2e] hover:text-[#3db86a] hover:underline"
               }`}
             >
               {isResending ? (
@@ -412,7 +408,7 @@ const LoginOtpVerification = ({
               disabled={!isComplete || isVerifying}
               className={`flex-2 px-6 py-3 rounded-lg font-medium text-white transition-all ${
                 isComplete && !isVerifying
-                  ? "bg-[#002C6C] hover:bg-[#001a4d]"
+                  ? "bg-[#3db86a] hover:bg-[#35a55e]"
                   : "bg-gray-300 cursor-not-allowed"
               }`}
             >

@@ -6,11 +6,11 @@ import {
   FaCog,
 } from "react-icons/fa";
 const FormerSideBar = ({ activeItem }: { activeItem: string }) => (
-  <aside className="w-72 h-screen bg-[#002C6C] text-white py-10 px-8 hidden md:block fixed">
-    <h2 className="text-2xl font-bold mb-10">
-      FirstBank <span className="text-[#FFD100]">Treasury </span>
+  <aside className="w-72 h-screen bg-[#0a2e16] border-r border-white/8 text-white py-10 px-8 hidden md:block fixed">
+    <h2 className="text-xl font-semibold tracking-tight mb-10">
+      Vest<span className="text-[#3db86a]">ora</span>
     </h2>
-    <nav className="space-y-4">
+    <nav className="space-y-2">
       <a
         href="/dashboard"
         className={`dashboard-nav ${

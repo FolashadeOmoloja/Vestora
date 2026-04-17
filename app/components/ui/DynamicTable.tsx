@@ -20,7 +20,7 @@ function DynamicTable<T extends object>({
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse">
           <thead>
-            <tr className="bg-[#002C6C] text-white">
+            <tr className="bg-[#0a2e16] text-white">
               {columns.map((col, i) => (
                 <th key={i} className="py-2 px-4">
                   {col.header}

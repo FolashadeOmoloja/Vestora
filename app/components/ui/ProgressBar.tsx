@@ -12,7 +12,7 @@ const ProgressBar = ({ currentStep, totalSteps, steps }: ProgressBarProps) => {
       <div className="relative flex items-center justify-between mb-2 max-sm:px-4">
         <div className="absolute top-1/2 left-0 w-full h-0.5 bg-gray-300 -translate-y-1/2 z-0"></div>
         <div
-          className="absolute top-1/2 left-0 h-0.5 bg-[#002C6C] -translate-y-1/2 z-10 transition-all duration-300"
+          className="absolute top-1/2 left-0 h-0.5 bg-[#3db86a] -translate-y-1/2 z-10 transition-all duration-300"
           style={{ width: `${((currentStep - 1) / (totalSteps - 1)) * 100}%` }}
         ></div>
 
@@ -27,7 +27,7 @@ const ProgressBar = ({ currentStep, totalSteps, steps }: ProgressBarProps) => {
               key={stepNumber}
               className={`relative z-20 flex items-center justify-center w-8 h-8 rounded-full border-2 text-sm font-medium transition-all duration-300 ${
                 isCompleted || isCurrent
-                  ? "bg-[#002C6C] border-[#002C6C] text-white"
+                  ? "bg-[#3db86a] border-[#3db86a] text-white"
                   : "bg-white border-gray-300 text-gray-400"
               }`}
             >
@@ -50,7 +50,7 @@ const ProgressBar = ({ currentStep, totalSteps, steps }: ProgressBarProps) => {
 
               <div
                 className={`absolute flex gap-2 items-center top-9 text-sm font-medium transition-colors duration-300 ${
-                  index + 1 <= currentStep ? "text-[#002C6C]" : "text-gray-400"
+                  index + 1 <= currentStep ? "text-[#1a5c2e]" : "text-gray-400"
                 }`}
               >
                 {steps[index].icon}

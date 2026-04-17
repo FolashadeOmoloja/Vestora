@@ -44,7 +44,7 @@ const AIForecastPage = () => {
                       onClick={() => setActiveTab("recommendations")}
                       className={`sm:px-6 px-3 py-4 text-sm font-medium border-b-2 ${
                         activeTab === "recommendations"
-                          ? "border-[#002C6C] text-[#002C6C]"
+                          ? "border-[#0a2e16] text-[#0a2e16]"
                           : "border-transparent text-gray-500 hover:text-gray-700"
                       }`}
                     >
@@ -54,7 +54,7 @@ const AIForecastPage = () => {
                       onClick={() => setActiveTab("chat")}
                       className={`sm:px-6 px-3 text-sm font-medium border-b-2 ${
                         activeTab === "chat"
-                          ? "border-[#002C6C] text-[#002C6C]"
+                          ? "border-[#0a2e16] text-[#0a2e16]"
                           : "border-transparent text-gray-500 hover:text-gray-700"
                       }`}
                     >
@@ -66,7 +66,7 @@ const AIForecastPage = () => {
                 {activeTab === "recommendations" && (
                   <div className="sm:p-6 p-4">
                     <div className="mb-6">
-                      <h2 className="text-xl font-semibold text-[#002C6C] mb-2">
+                      <h2 className="text-xl font-semibold text-[#0a2e16] mb-2">
                         Recommended NTBs for You
                       </h2>
                       <p className="text-gray-600">

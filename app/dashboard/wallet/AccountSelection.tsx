@@ -9,7 +9,7 @@ const AccountSelection = ({
 }: any) => {
   return (
     <div>
-      <label className="block text-sm font-medium text-[#002c6c] mb-3">
+      <label className="block text-sm font-medium text-[#0a2e16] mb-3">
         {label}
       </label>
       <div className="space-y-2">
@@ -19,13 +19,13 @@ const AccountSelection = ({
             onClick={() => handleAccountSelect(account, setSelectedAccount)}
             className={`p-3 border-[1.5px] rounded-lg cursor-pointer transition-all ${
               selectedAccount?.id === account.id
-                ? "border-[#002C6C] "
-                : "border-gray-200 hover:border-[#002C6C]"
+                ? "border-[#0a2e16] "
+                : "border-gray-200 hover:border-[#0a2e16]"
             }`}
           >
             <div className="flex items-center justify-between text-sm">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-[#002C6C] rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 bg-[#0a2e16] rounded-full flex items-center justify-center">
                   <CreditCard className="w-5 h-5 text-white" />
                 </div>
                 <div>

@@ -78,8 +78,8 @@ const SettingsPage: React.FC = () => {
                         onClick={() => setActiveSection(section.id)}
                         className={`w-full flex items-center gap-3 p-3 rounded-lg transition-all duration-200 ${
                           activeSection === section.id
-                            ? "bg-[#FFD100] text-[#002C6C] shadow-sm"
-                            : "text-gray-600 hover:bg-gray-50 hover:text-[#002C6C]"
+                            ? "bg-[#3db86a] text-[#0a2e16] shadow-sm"
+                            : "text-gray-600 hover:bg-gray-50 hover:text-[#0a2e16]"
                         }`}
                       >
                         <Icon className="w-5 h-5 flex-shrink-0" />

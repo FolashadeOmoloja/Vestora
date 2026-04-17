@@ -215,7 +215,7 @@ const PersonalDetails = ({
         <div className="space-y-3">
           {/* Personal Information Section */}
           <div>
-            <h3 className="text-lg font-semibold text-[#002C6C] mb-4">
+            <h3 className="text-lg font-semibold text-[#0a2e16] mb-4">
               Personal Information
             </h3>
 
@@ -237,7 +237,7 @@ const PersonalDetails = ({
                     className={`form-input !pl-10 ${
                       errors.fullName
                         ? "border-red-300 focus:border-red-500"
-                        : "border-gray-200 focus:border-[#002C6C]"
+                        : "border-gray-200 focus:border-[#3db86a]"
                     }`}
                   />
                 </div>
@@ -264,7 +264,7 @@ const PersonalDetails = ({
                     className={`form-input !pl-10 ${
                       errors.email
                         ? "border-red-300 focus:border-red-500"
-                        : "border-gray-200 focus:border-[#002C6C]"
+                        : "border-gray-200 focus:border-[#3db86a]"
                     }`}
                   />
                 </div>
@@ -291,7 +291,7 @@ const PersonalDetails = ({
                     className={`form-input !pl-10 ${
                       errors.phoneNumber
                         ? "border-red-300 focus:border-red-500"
-                        : "border-gray-200 focus:border-[#002C6C]"
+                        : "border-gray-200 focus:border-[#3db86a]"
                     }`}
                   />
                 </div>
@@ -307,7 +307,7 @@ const PersonalDetails = ({
 
           {/* KYC Information Section */}
           <div>
-            <h3 className="text-lg font-semibold text-[#002C6C] mb-4">
+            <h3 className="text-lg font-semibold text-[#0a2e16] mb-4">
               KYC Information
             </h3>
 
@@ -414,7 +414,7 @@ const PersonalDetails = ({
           <div className="text-center pt-4">
             <p className="text-sm text-gray-500">
               Need help with document requirements?
-              <span className="text-[#002C6C] font-medium cursor-pointer hover:underline ml-1">
+              <span className="text-[#0a2e16] font-medium cursor-pointer hover:underline ml-1">
                 View guidelines
               </span>
             </p>

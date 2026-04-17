@@ -37,7 +37,7 @@ const WalletPage = () => {
         {/* Header */}
         <header className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-[#002C6C]">My Wallet</h1>
+            <h1 className="text-2xl font-bold text-[#0a2e16]">My Wallet</h1>
             <p className="text-sm text-gray-600">
               Manage your treasury investment wallet. View balance funding
               options.
@@ -45,8 +45,8 @@ const WalletPage = () => {
           </div>
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
-              <Shield className="w-5 h-5 text-[#FFD100]" />
-              <span className="text-sm font-medium text-[#002C6C]">
+              <Shield className="w-5 h-5 text-[#3db86a]" />
+              <span className="text-sm font-medium text-[#0a2e16]">
                 KYC Verified
               </span>
             </div>
@@ -89,14 +89,14 @@ const WalletPage = () => {
               {/* Action Buttons */}
               <div className="flex flex-wrap gap-4 mb-8">
                 <button
-                  className="flex bg-[#002C6C] items-center space-x-2 px-6 py-3 rounded-lg font-medium text-white transition-colors"
+                  className="flex bg-[#0a2e16] items-center space-x-2 px-6 py-3 rounded-lg font-medium text-white transition-colors"
                   onClick={() => setIsModalOpen(true)}
                 >
                   <Plus className="w-5 h-5" />
                   <span>Add Funds</span>
                 </button>
                 <button
-                  className="flex border-[#002C6C] text-[#002C6C] items-center space-x-2 bg-white border-2 px-6 py-3 rounded-lg font-medium transition-colors hover:bg-gray-50"
+                  className="flex border-[#0a2e16] text-[#0a2e16] items-center space-x-2 bg-white border-2 px-6 py-3 rounded-lg font-medium transition-colors hover:bg-gray-50"
                   onClick={() => setIsWithdrawModalOpen(true)}
                 >
                   <Minus className="w-5 h-5" />
@@ -122,7 +122,7 @@ const WalletPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 {/* Wallet Limits */}
                 <div className="bg-white rounded shadow  border border-gray-200 p-6">
-                  <h3 className="text-lg font-semibold text-[#002C6C] mb-4">
+                  <h3 className="text-lg font-semibold text-[#0a2e16] mb-4">
                     Wallet Limits
                   </h3>
                   <div className="space-y-4">
@@ -144,7 +144,7 @@ const WalletPage = () => {
                               (walletData.usedDaily / walletData.dailyLimit) *
                               100
                             }%`,
-                            backgroundColor: "#002C6C",
+                            backgroundColor: "#0a2e16",
                           }}
                         ></div>
                       </div>
@@ -168,7 +168,7 @@ const WalletPage = () => {
                                 walletData.monthlyLimit) *
                               100
                             }%`,
-                            backgroundColor: "#FFD100",
+                            backgroundColor: "#3db86a",
                           }}
                         ></div>
                       </div>
@@ -178,7 +178,7 @@ const WalletPage = () => {
 
                 {/* Investment Summary */}
                 <div className="bg-white rounded shadow  border border-gray-200 p-6">
-                  <h3 className="text-lg font-semibold text-[#002C6C] mb-4">
+                  <h3 className="text-lg font-semibold text-[#0a2e16] mb-4">
                     Investment Funding Summary
                   </h3>
                   <div className="space-y-3">
@@ -196,7 +196,7 @@ const WalletPage = () => {
                       </span>
                       <span
                         className="font-medium"
-                        style={{ color: "#002C6C" }}
+                        style={{ color: "#0a2e16" }}
                       >
                         {formatCurrency(1050000)}
                       </span>
@@ -223,8 +223,8 @@ const WalletPage = () => {
 
               {/* Linked Accounts */}
               <div className="bg-white rounded shadow  border border-gray-200 p-6 mb-8">
-                <h3 className="text-lg font-semibold text-[#002C6C] mb-4">
-                  Linked FirstBank Accounts
+                <h3 className="text-lg font-semibold text-[#0a2e16] mb-4">
+                  Linked Vestora Accounts
                 </h3>
                 <div className="space-y-3">
                   {linkedAccounts.map((account) => (
@@ -235,7 +235,7 @@ const WalletPage = () => {
                       <div className="flex items-center space-x-4">
                         <div
                           className="w-10 h-10 rounded-full flex items-center justify-center"
-                          style={{ backgroundColor: "#002C6C" }}
+                          style={{ backgroundColor: "#0a2e16" }}
                         >
                           <CreditCard className="w-5 h-5 text-white" />
                         </div>
@@ -248,8 +248,8 @@ const WalletPage = () => {
                               <span
                                 className="px-2 py-1 text-xs rounded-full text-white"
                                 style={{
-                                  backgroundColor: "#FFD100",
-                                  color: "#002C6C",
+                                  backgroundColor: "#3db86a",
+                                  color: "#0a2e16",
                                 }}
                               >
                                 Primary
@@ -276,7 +276,7 @@ const WalletPage = () => {
               <div className="bg-white rounded shadow  border border-gray-200 p-6">
                 <div className="mb-6">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold text-[#002C6C]">
+                    <h3 className="text-lg font-semibold text-[#0a2e16]">
                       Recent Transactions
                     </h3>
 

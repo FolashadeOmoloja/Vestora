@@ -14,12 +14,12 @@ export const StatusFilter = ({
   statusFilter: string;
   statusOptions: string[];
 }) => (
-  <div className="relative text-[#002C6C]">
+  <div className="relative text-[#0a2e16]">
     <button
       onClick={onClick}
       className="flex items-center gap-2 px-4 py-3  bg-white rounded-lg shadow"
     >
-      <Filter className="h-4 w-4  text-[#FFD100]" />
+      <Filter className="h-4 w-4  text-[#3db86a]" />
       <span className="text-sm">
         Status: <span className="font-medium">{statusFilter}</span>
       </span>
@@ -56,12 +56,12 @@ export const TenorFilter = ({
   tenorFilter: string;
   tenorOptions: string[];
 }) => (
-  <div className="relative text-[#002C6C]">
+  <div className="relative text-[#0a2e16]">
     <button
       onClick={onClick}
       className="flex items-center gap-2 px-4 py-3  bg-white rounded-lg shadow"
     >
-      <Calendar className="h-4 w-4 text-[#FFD100] font-semibold" />
+      <Calendar className="h-4 w-4 text-[#3db86a] font-semibold" />
       <span className="text-sm">
         Tenor: <span className="font-medium">{tenorFilter}</span>
       </span>

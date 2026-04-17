@@ -17,14 +17,14 @@ const AiChat = () => {
               }`}
             >
               {msg.type === "ai" && (
-                <div className="w-8 h-8 bg-[#002C6C] rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 bg-[#0a2e16] rounded-full flex items-center justify-center flex-shrink-0">
                   <Bot className="h-4 w-4 text-white" />
                 </div>
               )}
               <div
                 className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
                   msg.type === "user"
-                    ? "bg-[#002C6C] text-white"
+                    ? "bg-[#0a2e16] text-white"
                     : "bg-gray-100 text-gray-900"
                 }`}
               >
@@ -48,9 +48,9 @@ const AiChat = () => {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Ask me anything about NTB investments..."
-            className="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#002C6C] focus:border-[#002C6C] outline-none"
+            className="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#0a2e16] focus:border-[#0a2e16] outline-none"
           />
-          <button className="bg-[#002C6C] text-white p-2 rounded-lg hover:bg-[#001a4d] transition-colors">
+          <button className="bg-[#0a2e16] text-white p-2 rounded-lg hover:bg-[#35a55e] transition-colors">
             <Send className="h-5 w-5" />
           </button>
         </div>

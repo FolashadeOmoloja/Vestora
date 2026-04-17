@@ -72,7 +72,7 @@ export default function Dashboard() {
     <DashboardContainer activeItem="dashboard">
       <div>
         <header className="flex justify-between items-center mb-16">
-          <h1 className="text-2xl font-semibold text-[#002C6C]">
+          <h1 className="text-2xl font-semibold text-[#0a2e16]">
             Welcome, Folashade
           </h1>
           <UserHeader />
@@ -92,7 +92,7 @@ export default function Dashboard() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
           <InfoCard
-            icon={<FaLightbulb className="text-[#FFD100] text-xl" />}
+            icon={<FaLightbulb className="text-[#1a5c2e] text-xl" />}
             title="Wallet Overview"
             description="Manage and fund your wallet"
             buttonText="View Wallet"
@@ -100,7 +100,7 @@ export default function Dashboard() {
           />
 
           <InfoCard
-            icon={<FaRedoAlt className="text-[#FFD100] text-xl" />}
+            icon={<FaRedoAlt className="text-[#1a5c2e] text-xl" />}
             title="Reinvest Now"
             description="₦1.2M available for reinvestment"
             buttonText="Explore Listings"
@@ -108,7 +108,7 @@ export default function Dashboard() {
           />
 
           <InfoCard
-            icon={<FaFileDownload className="text-[#FFD100] text-xl" />}
+            icon={<FaFileDownload className="text-[#1a5c2e] text-xl" />}
             title="Download Reports"
             description="Export your NTB history"
             buttonText="Download CSV"
@@ -120,7 +120,7 @@ export default function Dashboard() {
           <AICard />
         </div>
         <div className="bg-white p-6 rounded-xl shadow">
-          <h3 className="text-lg font-semibold text-[#002C6C] mb-4">
+          <h3 className="text-lg font-semibold text-[#0a2e16] mb-4">
             Recent NTB Investments
           </h3>
           <DynamicTable columns={MyNtbColumn} data={ntbData} />
@@ -146,16 +146,15 @@ const Cards = ({
   title: string;
   value: string;
 }) => (
-  <div className="bg-white p-6 rounded-xl shadow-md flex items-center space-x-4 group relative hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-    <div className="p-3 bg-[#002C6C]/90 rounded-md">
-      <Icon className="text-[#FFD100] text-xl" />
+  <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm flex items-center space-x-4 group relative hover:shadow-md hover:border-[#3db86a]/30 transition-all duration-300 hover:-translate-y-0.5">
+    <div className="p-3 bg-[#e8f5ed] rounded-lg">
+      <Icon className="text-[#1a5c2e] text-xl" />
     </div>
     <div>
       <p className="text-sm text-gray-500">{title}</p>
-      <h2 className="text-xl font-bold text-[#002C6C]">{value}</h2>
+      <h2 className="text-xl font-bold text-[#0a2e16]">{value}</h2>
     </div>
-    {/* Subtle border accent */}
-    <div className="absolute top-0 left-6 right-6 h-0.5 bg-gradient-to-r from-[#002C6C]/20 to-[#002C6C] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+    <div className="absolute top-0 left-6 right-6 h-0.5 bg-gradient-to-r from-[#3db86a]/20 to-[#3db86a] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
   </div>
 );
 
@@ -172,14 +171,14 @@ const InfoCard = ({
   buttonText: string;
   onClick?: () => void;
 }) => (
-  <div className="bg-white p-4 rounded-xl shadow-sm hover:shadow-lg flex items-center space-x-4">
-    <div className="p-3 bg-[#002C6C]/90 rounded-md">{icon}</div>
+  <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-[#3db86a]/25 flex items-center space-x-4 transition-all">
+    <div className="p-3 bg-[#e8f5ed] rounded-lg">{icon}</div>
     <div>
-      <p className="text-sm font-semibold text-[#002C6C]">{title}</p>
+      <p className="text-sm font-semibold text-[#0a2e16]">{title}</p>
       <p className="text-sm text-gray-500">{description}</p>
       <button
         onClick={onClick}
-        className="text-sm text-[#002C6C] underline mt-1"
+        className="text-sm text-[#1a5c2e] font-medium underline decoration-[#3db86a]/50 underline-offset-2 mt-1 hover:text-[#3db86a]"
       >
         {buttonText}
       </button>

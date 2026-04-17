@@ -5,13 +5,12 @@ import { useRouter } from "next/navigation";
 const AICard = () => {
   const router = useRouter();
   return (
-    <div className="bg-[#e5e9f6] p-5 rounded-xl shadow-md  w-full basis-[45%] flex flex-col">
-      {/* Header with AI branding */}
+    <div className="bg-[#e8f5ed] border border-[#c6e8d0] p-5 rounded-xl shadow-sm w-full basis-[45%] flex flex-col">
       <div className="flex items-center gap-2 mb-4">
-        <div className="p-2 bg-white/80 rounded-lg shadow-sm">
-          <Bot className="text-[#FFD100] text-lg" />
+        <div className="p-2 bg-white rounded-lg shadow-sm border border-gray-100">
+          <Bot className="text-[#1a5c2e] text-lg" />
         </div>
-        <h3 className="text-lg font-bold text-[#002C6C]">AI Investment Tips</h3>
+        <h3 className="text-lg font-bold text-[#0a2e16]">AI Investment Tips</h3>
       </div>
 
       {/* Description */}
@@ -23,21 +22,21 @@ const AICard = () => {
       <div className="grid grid-cols-2 gap-3 mb-4">
         <div className="bg-white/60 rounded-lg py-4 px-3">
           <p className="text-xs text-gray-600 mb-1">Available Budget</p>
-          <p className="text-sm font-bold text-[#002C6C]">₦2,500,000</p>
+          <p className="text-sm font-bold text-[#0a2e16]">₦2,500,000</p>
         </div>
         <div className="bg-white/60 rounded-lg py-4 px-3">
           <p className="text-xs text-gray-600 mb-1">Preferred Tenor</p>
-          <p className="text-sm font-semibold text-[#002C6C]">12-18 months</p>
+          <p className="text-sm font-semibold text-[#0a2e16]">12-18 months</p>
         </div>
         <div className="bg-white/60 rounded-lg py-4 px-3">
           <p className="text-xs text-gray-600 mb-1">Risk Tolerance</p>
-          <span className="inline-block px-2 py-1 bg-yellow-100 text-yellow-700 text-xs font-medium rounded-full">
+          <span className="inline-block px-2 py-1 bg-[#fffbf0] text-[#5c3a00] text-xs font-medium rounded-full border border-[#f5dfa0]/80">
             Medium
           </span>
         </div>
         <div className="bg-white/60 rounded-lg py-4 px-3">
           <p className="text-xs text-gray-600 mb-1">Target Return</p>
-          <p className="text-sm font-semibold text-[#002C6C]">15% annually</p>
+          <p className="text-sm font-semibold text-[#0a2e16]">15% annually</p>
         </div>
       </div>
       <div>

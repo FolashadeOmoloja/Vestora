@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Button from "../../components/ui/Button";
 import ProgressBar from "../../components/ui/ProgressBar";
 import {
@@ -8,12 +8,11 @@ import {
   FaRegAddressCard,
   FaKey,
 } from "react-icons/fa";
-import LeftPanelSlide from "../../components/ui/LeftPanelSlide";
 import OTPInput from "../../components/signup/OTPInput";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-export default function FirstBankNTBOnboarding() {
+export default function VestoraNTBOnboarding() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     accountNumber: "",
@@ -50,17 +49,15 @@ export default function FirstBankNTBOnboarding() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-2xl mx-auto flex-1  p-14 max-sm:p-10 max-sm:px-4 min-h-screen   text-[#002C6C]"
+      className="max-w-2xl mx-auto w-full flex-1 flex flex-col justify-center p-10 lg:p-14 max-sm:px-4 min-h-screen text-[#0a2e16]"
     >
-      <h2 className="text-3xl font-semibold text-center mb-2">
-        Welcome To First Bank Treasury
+      <h2 className="text-3xl font-semibold text-center mb-2 text-[#0a2e16]">
+        Welcome to Vestora
       </h2>
       <p className="text-center max-w-md text-gray-600 mb-8 text-sm mx-auto">
         Make secure investments in Nigerian Treasury Bills with ease,
         confidence, and{" "}
-        <span className="font-medium text-[#002C6C]">
-          First Bank's support.
-        </span>
+        <span className="font-medium text-[#1a5c2e]">{`Vestora's support.`}</span>
       </p>
 
       <ProgressBar currentStep={step} totalSteps={4} steps={steps} />
@@ -76,10 +73,7 @@ export default function FirstBankNTBOnboarding() {
             className="form-input"
             placeholder="Enter your account number"
           />
-          <Button
-            onClick={nextStep}
-            className="w-full bg-[#00205B] text-white hover:bg-[#001a4d] mt-6"
-          >
+          <Button onClick={nextStep} className="w-full mt-6">
             Next
           </Button>
         </div>
@@ -104,10 +98,7 @@ export default function FirstBankNTBOnboarding() {
             >
               Back
             </Button>
-            <Button
-              onClick={nextStep}
-              className="bg-[#00205B] text-white hover:bg-[#001a4d] min-w-[162px]"
-            >
+            <Button onClick={nextStep} className="min-w-[162px]">
               Next
             </Button>
           </div>
@@ -157,10 +148,7 @@ export default function FirstBankNTBOnboarding() {
             >
               Back
             </Button>
-            <Button
-              onClick={nextStep}
-              className="bg-[#00205B] min-w-[162px] text-white hover:bg-[#001a4d]"
-            >
+            <Button onClick={nextStep} className="min-w-[162px]">
               Next
             </Button>
           </div>
@@ -197,7 +185,7 @@ export default function FirstBankNTBOnboarding() {
 
       <p className="mt-3 text-sm">
         Already have an investment account?{" "}
-        <span className="font-semibold border-b border-[#00205B] cursor-pointer">
+        <span className="font-semibold border-b border-[#3db86a] cursor-pointer text-[#1a5c2e]">
           Log in
         </span>
       </p>

@@ -14,7 +14,7 @@ export const AutoRollover = () => {
 
   return (
     <div className="space-y-6">
-      <h3 className="text-xl font-semibold text-[#002C6C] flex items-center gap-2">
+      <h3 className="text-xl font-semibold text-[#0a2e16] flex items-center gap-2">
         <RefreshCw className="w-5 h-5" />
         Auto-Rollover Settings
       </h3>
@@ -53,7 +53,7 @@ export const AutoRollover = () => {
 
       {autoRollover && (
         <div className="space-y-4  rounded-lg">
-          <h4 className="font-semibold text-[#002C6C]">
+          <h4 className="font-semibold text-[#0a2e16]">
             Default Rollover Preferences
           </h4>
 

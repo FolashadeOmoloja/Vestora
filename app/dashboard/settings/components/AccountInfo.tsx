@@ -17,14 +17,14 @@ export const AccountInfo = () => {
     bvn: "12345678901",
     dateOfBirth: "1990-01-15",
     address: "123 Victoria Island, Lagos",
-    bankName: "First Bank Nigeria",
+    bankName: "Vestora",
     accountNumber: "1234567890",
     accountName: "Folashade Omoloja",
   });
 
   return (
     <div className="space-y-6">
-      <h3 className="text-xl font-semibold text-[#002C6C] flex items-center gap-2">
+      <h3 className="text-xl font-semibold text-[#0a2e16] flex items-center gap-2">
         <User className="w-5 h-5" />
         Account Information
       </h3>
@@ -75,7 +75,7 @@ export const AccountInfo = () => {
             />
             <CheckCircle className="absolute right-3 top-5 w-5 h-5 text-teal-700" />
           </div>
-          <p className="text-xs text-[#002C6C] mt-1">
+          <p className="text-xs text-[#0a2e16] mt-1">
             KYC Completed - Cannot be changed
           </p>
         </div>
@@ -107,7 +107,7 @@ export const AccountInfo = () => {
 
       {/* Bank Account Details */}
       <div className="mt-8">
-        <h4 className="text-lg font-semibold text-[#002C6C] mb-4 flex items-center gap-2">
+        <h4 className="text-lg font-semibold text-[#0a2e16] mb-4 flex items-center gap-2">
           <Building2 className="w-5 h-5" />
           Bank Account Details
         </h4>
@@ -150,7 +150,7 @@ export const AccountInfo = () => {
 
       {/* Password Management */}
       <div className="mt-8">
-        <h4 className="text-lg font-semibold text-[#002C6C] mb-4 flex items-center gap-2">
+        <h4 className="text-lg font-semibold text-[#0a2e16] mb-4 flex items-center gap-2">
           <Lock className="w-5 h-5" />
           Password Management
         </h4>
@@ -175,7 +175,7 @@ export const AccountInfo = () => {
             <button
               onClick={() => setTwoFactorAuth(!twoFactorAuth)}
               className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                twoFactorAuth ? "bg-[#FFD100]" : "bg-gray-300"
+                twoFactorAuth ? "bg-[#3db86a]" : "bg-gray-300"
               }`}
             >
               <span

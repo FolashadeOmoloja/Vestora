@@ -27,14 +27,14 @@ const StatusCards = () => {
   return (
     <div className="flex flex-col sm:flex-row gap-4 w-full mt-8">
       {/* KYC Progress Card */}
-      <section className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex-1">
+      <section className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex-1">
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center gap-3">
-            <div className="p-2 bg-[#E5ECF6]/40 rounded-lg">
-              <FaUserShield className="h-5 w-5 text-[#FFD100]" />
+            <div className="p-2 bg-[#e8f5ed] rounded-lg">
+              <FaUserShield className="h-5 w-5 text-[#1a5c2e]" />
             </div>
             <div>
-              <h3 className="font-semibold text-[#002C6C] text-lg">
+              <h3 className="font-semibold text-[#0a2e16] text-lg">
                 Profile Progress
               </h3>
               <p className="text-sm text-gray-600">Complete your Profile</p>
@@ -52,7 +52,7 @@ const StatusCards = () => {
                 cx="50"
                 cy="50"
                 r={radius}
-                stroke="#E5ECF6"
+                stroke="#c6e8d0"
                 strokeWidth="8"
                 fill="none"
               />
@@ -61,7 +61,7 @@ const StatusCards = () => {
                 cx="50"
                 cy="50"
                 r={radius}
-                stroke="#FFD100"
+                stroke="#3db86a"
                 strokeWidth="8"
                 fill="none"
                 strokeDasharray={strokeDasharray}
@@ -72,7 +72,7 @@ const StatusCards = () => {
             </svg>
             {/* Percentage text */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-lg font-bold text-[#002C6C]">
+              <span className="text-lg font-bold text-[#0a2e16]">
                 {kycProgress.completed}%
               </span>
             </div>
@@ -103,7 +103,7 @@ const StatusCards = () => {
           {kycProgress.status !== "completed" && (
             <div className="flex items-center justify-between">
               <span className="text-sm text-gray-600">Next Step:</span>
-              <span className="text-sm font-medium text-[#002C6C] ">
+              <span className="text-sm font-medium text-[#1a5c2e] ">
                 {kycProgress.nextStep}
               </span>
             </div>
@@ -121,14 +121,14 @@ const StatusCards = () => {
       </section>
 
       {/* Auto-Rollover Status Card */}
-      <section className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex-1">
+      <section className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex-1">
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center gap-3">
-            <div className="p-2 bg-[#E5ECF6]/40 rounded-lg">
-              <FaRotateRight className="h-5 w-5 text-[#FFD100]" />
+            <div className="p-2 bg-[#e8f5ed] rounded-lg">
+              <FaRotateRight className="h-5 w-5 text-[#1a5c2e]" />
             </div>
             <div>
-              <h3 className="font-semibold text-[#002C6C] text-lg">
+              <h3 className="font-semibold text-[#0a2e16] text-lg">
                 Auto-Rollover
               </h3>
               <p className="text-sm text-gray-600">Automatic NTB renewals</p>
@@ -139,7 +139,7 @@ const StatusCards = () => {
           <div className="flex flex-col items-end">
             <div
               className={`relative w-12 h-6 rounded-full transition-colors ${
-                autoRollover.enabled ? "bg-green-400" : "bg-gray-300"
+                autoRollover.enabled ? "bg-[#3db86a]" : "bg-gray-300"
               }`}
             >
               <div
@@ -149,7 +149,7 @@ const StatusCards = () => {
               ></div>
               {autoRollover.enabled && (
                 <div className="absolute top-1 left-1 w-4 h-4 flex items-center justify-center">
-                  <div className="w-1.5 h-1.5 bg-[#FFD100] rounded-full"></div>
+                  <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
                 </div>
               )}
             </div>
@@ -169,13 +169,13 @@ const StatusCards = () => {
             <>
               <div className="flex items-center justify-between">
                 <span className="text-sm text-gray-600">Active Bonds:</span>
-                <span className="text-sm font-medium text-[#002C6C]">
+                <span className="text-sm font-medium text-[#1a5c2e]">
                   {autoRollover.activeBonds}
                 </span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-sm text-gray-600">Next Rollover:</span>
-                <span className="text-sm font-medium text-[#002C6C]">
+                <span className="text-sm font-medium text-[#1a5c2e]">
                   {autoRollover.nextRollover}
                 </span>
               </div>

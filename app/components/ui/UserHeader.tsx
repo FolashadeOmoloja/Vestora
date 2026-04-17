@@ -176,7 +176,7 @@ const UserHeader = () => {
                     </p>
                     <p className="text-sm text-gray-600">
                       Amount:{" "}
-                      <span className="font-medium text-[#002C6C]">
+                      <span className="font-medium text-[#0a2e16]">
                         {alert.amount}
                       </span>
                     </p>
@@ -185,7 +185,7 @@ const UserHeader = () => {
               </div>
 
               <div className="p-3 border-t border-gray-200">
-                <button className="w-full text-sm text-[#002C6C] hover:text-[#001a4d] font-medium">
+                <button className="w-full text-sm text-[#1a5c2e] hover:text-[#3db86a] font-medium">
                   View All Notifications
                 </button>
               </div>
@@ -244,7 +244,7 @@ const UserHeader = () => {
               </div>
 
               <div className="p-3 border-t border-gray-200">
-                <button className="w-full text-sm text-[#002C6C] hover:text-[#001a4d] font-medium">
+                <button className="w-full text-sm text-[#1a5c2e] hover:text-[#3db86a] font-medium">
                   View All Messages
                 </button>
               </div>
@@ -255,7 +255,7 @@ const UserHeader = () => {
         {/* User Profile */}
         <div className="relative flex items-center gap-3 pl-4 border-l border-gray-200">
           {/* User Avatar Circle */}
-          <div className="w-10 h-10 bg-[#002C6C] text-white rounded-full flex items-center justify-center font-semibold">
+          <div className="w-10 h-10 bg-[#3db86a] text-white rounded-full flex items-center justify-center font-semibold">
             {user.initials}
           </div>
 

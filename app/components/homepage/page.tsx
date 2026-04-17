@@ -1,16 +1,16 @@
 "use client";
 import { useRouter } from "next/navigation";
-import Navbar from "@/app/components/homepage/Navbar";
-import Hero from "@/app/components/homepage/Hero";
-import TrustBar from "@/app/components/homepage/TrustBar";
-import Products from "@/app/components/homepage/Products";
-import HowItWorks from "@/app/components/homepage/HowItWorks";
-import Features from "@/app/components/homepage/Features";
-import Stats from "@/app/components/homepage/Stats";
-import Testimonials from "@/app/components/homepage/Testimonials";
-import FAQ from "@/app/components/homepage/FAQ";
-import CTA from "@/app/components/homepage/CTA";
-import Footer from "@/app/components/homepage/Footer";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import TrustBar from "@/components/TrustBar";
+import Products from "@/components/Products";
+import HowItWorks from "@/components/HowItWorks";
+import Features from "@/components/Features";
+import Stats from "@/components/Stats";
+import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
+import CTA from "@/components/CTA";
+import Footer from "@/components/Footer";
 
 export default function LandingPage() {
   const router = useRouter();

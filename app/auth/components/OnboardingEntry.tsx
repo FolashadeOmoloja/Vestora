@@ -2,40 +2,39 @@
 import React, { useState } from "react";
 import { Building, CreditCard, Shield, ArrowRight } from "lucide-react";
 
-// Types
 interface UserTypeSelectionProps {
-  onSelect: (type: "firstbank" | "open_account" | "link_only") => void;
+  onSelect: (type: "vestora" | "open_account" | "link_only") => void;
 }
 
 const UserTypeSelection = ({ onSelect }: UserTypeSelectionProps) => {
   const [selectedType, setSelectedType] = useState<
-    "firstbank" | "open_account" | "link_only" | null
+    "vestora" | "open_account" | "link_only" | null
   >(null);
 
   const userTypes = [
     {
-      id: "firstbank" as const,
-      title: "I'm a FirstBank Customer",
-      description: "I have an existing FirstBank account",
+      id: "vestora" as const,
+      title: "I'm a Vestora customer",
+      description: "I have an existing Vestora account",
       icon: Building,
-      color: "bg-[#002C6C]",
-      hoverColor: "hover:border-[#002C6C] hover:bg-blue-50",
+      color: "bg-[#3db86a]",
+      hoverColor: "hover:border-[#3db86a]/50 hover:bg-[#f4faf6]",
     },
     {
       id: "open_account" as const,
-      title: "Open FirstBank Account",
-      description: "I want to open a new FirstBank account",
+      title: "Open a Vestora account",
+      description: "I want to open a new Vestora account",
       icon: CreditCard,
-      color: "bg-[#002C6C]",
-      hoverColor: "hover:border-[#002C6C] hover:bg-blue-50",
+      color: "bg-[#3db86a]",
+      hoverColor: "hover:border-[#3db86a]/50 hover:bg-[#f4faf6]",
     },
     {
       id: "link_only" as const,
       title: "Link Other Bank Account",
       description: "I'll use my existing bank account from another bank",
       icon: Shield,
-      color: "bg-[#002C6C]",
-      hoverColor: "hover:border-[#002C6C] hover:bg-blue-50",
+      color: "bg-[#3db86a]",
+      hoverColor: "hover:border-[#3db86a]/50 hover:bg-[#f4faf6]",
     },
   ];
 
@@ -52,26 +51,28 @@ const UserTypeSelection = ({ onSelect }: UserTypeSelectionProps) => {
   return (
     <div>
       <div className="max-w-2xl mx-auto p-8">
-        {/* Header */}
         <div className="text-center mb-7">
-          <h1 className="text-3xl font-semibold text-[#002C6C] mb-4">
-            Welcome to FirstBank Treasury
+          <div className="inline-flex items-center gap-2 bg-[#3db86a]/15 border border-[#3db86a]/30 text-[#1a5c2e] text-xs px-3 py-1.5 rounded-full mb-5">
+            <Shield size={12} />
+            CBN Licensed · Secured by Vestora
+          </div>
+          <h1 className="text-3xl font-semibold text-[#0a2e16] mb-4">
+            Welcome to Vestora
           </h1>
           <p className="text-gray-600 text-sm max-w-md mx-auto mb-8">
             Make secure investments in Nigerian Treasury Bills with ease,
             confidence, and
-            <span className="font-medium text-[#002C6C]">
+            <span className="font-medium text-[#1a5c2e]">
               {" "}
-              FirstBank's support.
+              {`Vestora's support.`}
             </span>
           </p>
         </div>
 
-        {/* Form Container */}
         <div className="">
           <div className="space-y-6">
             <div className="text-center mb-8">
-              <h3 className="text-xl font-semibold text-[#002C6C] mb-2">
+              <h3 className="text-xl font-semibold text-[#0a2e16] mb-2">
                 How would you like to proceed?
               </h3>
               <p className="text-gray-600 text-sm">
@@ -79,7 +80,6 @@ const UserTypeSelection = ({ onSelect }: UserTypeSelectionProps) => {
               </p>
             </div>
 
-            {/* User Type Options */}
             <div className="space-y-4">
               {userTypes.map((type) => {
                 const Icon = type.icon;
@@ -91,7 +91,7 @@ const UserTypeSelection = ({ onSelect }: UserTypeSelectionProps) => {
                     onClick={() => handleSelection(type.id)}
                     className={`w-full p-3 border-2 rounded-xl transition-all text-left group relative ${
                       isSelected
-                        ? `border-[#002C6C] bg-blue-50 shadow-md`
+                        ? "border-[#3db86a] bg-[#e8f5ed] shadow-md"
                         : `border-gray-200 ${type.hoverColor}`
                     }`}
                   >
@@ -104,7 +104,7 @@ const UserTypeSelection = ({ onSelect }: UserTypeSelectionProps) => {
                       <div className="flex-1">
                         <h4
                           className={`font-semibold text-lg mb-0.5 ${
-                            isSelected ? "text-[#002C6C]" : "text-gray-800"
+                            isSelected ? "text-[#0a2e16]" : "text-gray-800"
                           }`}
                         >
                           {type.title}
@@ -114,10 +114,9 @@ const UserTypeSelection = ({ onSelect }: UserTypeSelectionProps) => {
                         </p>
                       </div>
 
-                      {/* Selection indicator */}
                       {isSelected && (
                         <div className="absolute top-4 right-4">
-                          <div className="w-6 h-6 bg-[#002C6C] rounded-full flex items-center justify-center">
+                          <div className="w-6 h-6 bg-[#3db86a] rounded-full flex items-center justify-center">
                             <svg
                               className="w-4 h-4 text-white"
                               fill="currentColor"
@@ -138,14 +137,13 @@ const UserTypeSelection = ({ onSelect }: UserTypeSelectionProps) => {
               })}
             </div>
 
-            {/* Continue Button */}
             <div className="pt-6">
               <button
                 onClick={handleContinue}
                 disabled={!selectedType}
                 className={`w-full flex items-center justify-center px-6 py-4 rounded-xl font-medium text-white transition-all ${
                   selectedType
-                    ? "bg-[#002C6C] hover:bg-[#001a4d] shadow-md hover:shadow-lg"
+                    ? "bg-[#3db86a] hover:bg-[#35a55e] shadow-md hover:shadow-lg"
                     : "bg-gray-300 cursor-not-allowed"
                 }`}
               >
@@ -156,11 +154,10 @@ const UserTypeSelection = ({ onSelect }: UserTypeSelectionProps) => {
           </div>
         </div>
 
-        {/* Footer */}
         <div className="text-center mt-2">
           <p className="text-sm text-gray-500">
             Already have a treasury account?
-            <span className="text-[#002C6C] font-medium cursor-pointer hover:underline ml-1">
+            <span className="text-[#1a5c2e] font-medium cursor-pointer hover:underline ml-1">
               Sign in here
             </span>
           </p>
@@ -170,18 +167,11 @@ const UserTypeSelection = ({ onSelect }: UserTypeSelectionProps) => {
   );
 };
 
-// Demo component to show how it works
 export default function OnboardingEntry({ setStep }: any) {
   const handleUserTypeSelect = (
-    type: "firstbank" | "open_account" | "link_only"
+    type: "vestora" | "open_account" | "link_only"
   ) => {
     setStep(type);
-
-    const typeNames = {
-      firstbank: "FirstBank Customer",
-      open_account: "Open FirstBank Account",
-      link_only: "Link Other Bank Account",
-    };
   };
 
   return <UserTypeSelection onSelect={handleUserTypeSelect} />;

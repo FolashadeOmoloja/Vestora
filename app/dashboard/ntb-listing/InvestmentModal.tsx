@@ -52,7 +52,7 @@ export default function InvestmentModal({
   return (
     <ModalContainer
       handleClose={onClose}
-      Icon={<TrendingUp className="text-[#002C6C]" size={24} />}
+      Icon={<TrendingUp className="text-[#0a2e16]" size={24} />}
       heading={"Treasury Bill Investment"}
       text="Secure your financial future"
       backdrop={backdrop}
@@ -62,10 +62,10 @@ export default function InvestmentModal({
           <>
             {/* Investment Details Display */}
             <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6">
-              <h3 className="font-semibold text-[#002C6C] mb-3">
+              <h3 className="font-semibold text-[#0a2e16] mb-3">
                 Investment Details
               </h3>
-              <ul className="text-xs text-[#002C6C] space-y-1">
+              <ul className="text-xs text-[#0a2e16] space-y-1">
                 <li>
                   <strong>Offer:</strong> {investmentDetails.code}
                 </li>
@@ -90,7 +90,7 @@ export default function InvestmentModal({
             <div className="space-y-5">
               {/* Amount Input */}
               <div className="space-y-2">
-                <label className="flex items-center space-x-2 text-sm font-semibold text-[#002C6C]">
+                <label className="flex items-center space-x-2 text-sm font-semibold text-[#0a2e16]">
                   <DollarSign size={16} />
                   <span className="">Investment Amount</span>
                   <span className="text-xs text-gray-500 font-normal">
@@ -150,7 +150,7 @@ export default function InvestmentModal({
                     type="checkbox"
                     checked={autoRollover}
                     onChange={() => setAutoRollover(!autoRollover)}
-                    className=" w-4 h-4 text-[#002C6C] border-2 border-gray-300 rounded  accent-[#002C6C]"
+                    className=" w-4 h-4 text-[#0a2e16] border-2 border-gray-300 rounded  accent-[#0a2e16]"
                   />
                   <div className="flex-1">
                     <span className="text-sm font-medium text-gray-700">
@@ -176,8 +176,8 @@ export default function InvestmentModal({
 
               {/* Security Notice */}
               <div className="flex items-center justify-center space-x-2 text-xs text-gray-500">
-                <Shield size={14} className="text-[#002C6C]" />
-                <span>Secured by FirstBank's treasury system</span>
+                <Shield size={14} className="text-[#0a2e16]" />
+                <span>Secured by Vestora's treasury system</span>
               </div>
             </div>
           </>

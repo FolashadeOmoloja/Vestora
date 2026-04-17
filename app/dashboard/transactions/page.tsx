@@ -41,9 +41,9 @@ const TransactionPage = () => {
   const statusOptions = ["All", "Completed", "Processing", "Failed"];
   return (
     <DashboardContainer activeItem="transactions">
-      <div className=" bg-[#F5F8FC] min-h-screen">
+      <div className=" bg-[#f4faf6] min-h-screen">
         <div className="mb-8">
-          <h1 className="text-2xl font-bold text-[#002C6C]">
+          <h1 className="text-2xl font-bold text-[#0a2e16]">
             Transactions History
           </h1>
           <p className="text-sm text-gray-600">
@@ -56,13 +56,13 @@ const TransactionPage = () => {
           <div className="flex flex-col gap-y-4 lg:flex-row justify-between">
             {/* Search Bar */}
             <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#002C6C] h-4 w-4" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#0a2e16] h-4 w-4" />
               <input
                 type="text"
                 placeholder="Search Transactions.."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="placeholder:text-gray-400 placeholder:text-sm w-full pl-10 pr-4 py-3 bg-white rounded-lg focus:ring-2 focus:ring-[#002C6C] focus:border-transparent outline-none shadow"
+                className="placeholder:text-gray-400 placeholder:text-sm w-full pl-10 pr-4 py-3 bg-white rounded-lg focus:ring-2 focus:ring-[#0a2e16] focus:border-transparent outline-none shadow"
               />
             </div>
             <div className="flex flex-wrap gap-3">
@@ -114,10 +114,10 @@ const TransactionPage = () => {
               1-{filteredData.length} of {filteredData.length}
             </span>
             <div className="flex gap-2">
-              <button className="p-1 hover:text-[#002C6C] text-gray-400 ">
+              <button className="p-1 hover:text-[#0a2e16] text-gray-400 ">
                 <ChevronDown className="h-4 w-4 rotate-90" />
               </button>
-              <button className="p-1 hover:text-[#002C6C] text-gray-400">
+              <button className="p-1 hover:text-[#0a2e16] text-gray-400">
                 <ChevronDown className="h-4 w-4 -rotate-90" />
               </button>
             </div>

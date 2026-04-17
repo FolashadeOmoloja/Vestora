@@ -64,9 +64,9 @@ const AddFundsModal = ({
   return (
     <ModalContainer
       handleClose={handleClose}
-      Icon={<Plus className="text-[#002C6C]" size={24} />}
+      Icon={<Plus className="text-[#0a2e16]" size={24} />}
       heading={"Add Funds to Wallet"}
-      text="Transfer from your FirstBank account"
+      text="Transfer from your Vestora account"
     >
       <div className="p-6">
         {/* Step 1: Amount Selection */}
@@ -74,7 +74,7 @@ const AddFundsModal = ({
           <div className="space-y-6">
             {/* Amount Input */}
             <div>
-              <label className="block text-sm font-medium text-[#002C6C] mb-2">
+              <label className="block text-sm font-medium text-[#0a2e16] mb-2">
                 Amount to Add
               </label>
               <div className="relative">
@@ -96,10 +96,10 @@ const AddFundsModal = ({
 
             {/* Quick Amount Buttons */}
             <div>
-              <p className="text-sm font-medium text-[#002C6C] mb-3">
+              <p className="text-sm font-medium text-[#0a2e16] mb-3">
                 Quick amounts
               </p>
-              <div className="grid grid-cols-3 gap-2 text-[#002C6C]">
+              <div className="grid grid-cols-3 gap-2 text-[#0a2e16]">
                 {[100000, 500000, 1000000].map((quickAmount) => (
                   <button
                     key={quickAmount}
@@ -205,7 +205,7 @@ const AddFundsModal = ({
                 <div className="border-t pt-2 mt-2">
                   <div className="flex justify-between">
                     <span className="font-medium text-gray-900">Total:</span>
-                    <span className="font-bold text-[#002C6C]">
+                    <span className="font-bold text-[#0a2e16]">
                       {formatCurrency(parseInt(amount))}
                     </span>
                   </div>
@@ -250,7 +250,7 @@ const AddFundsModal = ({
               <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-8 h-8 text-blue-800" />
               </div>
-              <h3 className="text-lg font-semibold text-[#002c6c] mb-2">
+              <h3 className="text-lg font-semibold text-[#0a2e16] mb-2">
                 Verify Transaction
               </h3>
               <p className="text-gray-600 text-sm">
@@ -273,7 +273,7 @@ const AddFundsModal = ({
                     onChange={(e) =>
                       handleOtpChange(index, e.target.value, otp, setOtp)
                     }
-                    className="w-12 h-12 text-[#002c6c] text-center text-lg font-bold border border-gray-300 rounded-lg focus:border-[#002c6c]"
+                    className="w-12 h-12 text-[#0a2e16] text-center text-lg font-bold border border-gray-300 rounded-lg focus:border-[#0a2e16]"
                   />
                 ))}
               </div>
@@ -323,7 +323,7 @@ const AddFundsModal = ({
             <div className="bg-gray-50 rounded-lg p-4 space-y-2 text-sm">
               <div className="flex justify-between items-center">
                 <span className="text-gray-600">Amount Added:</span>
-                <span className="font-bold text-[#002C6C] text-base">
+                <span className="font-bold text-[#0a2e16] text-base">
                   {formatCurrency(parseInt(amount))}
                 </span>
               </div>
@@ -346,7 +346,7 @@ const AddFundsModal = ({
             </div>
 
             <div className="space-y-3">
-              <button className="w-full border border-[#002C6C] text-[#002C6C] py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors flex items-center justify-center space-x-2">
+              <button className="w-full border border-[#0a2e16] text-[#0a2e16] py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors flex items-center justify-center space-x-2">
                 <Download size={16} />
                 <span>Download Receipt</span>
               </button>
@@ -358,7 +358,7 @@ const AddFundsModal = ({
               />
               <div className="flex items-center justify-center space-x-2 text-xs text-gray-500">
                 <Shield size={16} />
-                <span>Secured by FirstBank's treasury system</span>
+                <span>Secured by Vestora's treasury system</span>
               </div>
             </div>
           </div>

@@ -188,11 +188,11 @@ const BankAccountLinking = ({
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-2xl mx-auto flex-1  p-14 max-sm:p-10 max-sm:px-4 min-h-screen   text-[#002C6C]"
+      className="max-w-2xl mx-auto flex-1  p-14 max-sm:p-10 max-sm:px-4 min-h-screen   text-[#0a2e16]"
     >
       {/* Header */}
       <div className="text-center mb-12">
-        <h1 className="text-3xl font-semibold text-[#002C6C] mb-4">
+        <h1 className="text-3xl font-semibold text-[#0a2e16] mb-4">
           Link Your Bank Account
         </h1>
         <p className="text-gray-600 text-sm max-w-md mx-auto">
@@ -358,7 +358,7 @@ const BankAccountLinking = ({
             <div>
               <p className="text-sm text-gray-500">
                 Having trouble?
-                <span className="text-[#002C6C] font-medium cursor-pointer hover:underline ml-1">
+                <span className="text-[#0a2e16] font-medium cursor-pointer hover:underline ml-1">
                   Contact support
                 </span>
               </p>

@@ -84,9 +84,9 @@ const WithdrawFundsModal = ({
   return (
     <ModalContainer
       handleClose={handleClose}
-      Icon={<Minus className="text-[#002C6C]" size={24} />}
+      Icon={<Minus className="text-[#0a2e16]" size={24} />}
       heading={"Withdraw from Wallet"}
-      text="Transfer to your FirstBank account"
+      text="Transfer to your Vestora account"
     >
       <div className="p-6">
         {/* Step 1: Amount and Account Selection */}
@@ -95,8 +95,8 @@ const WithdrawFundsModal = ({
             {/* Wallet Balance Info */}
             <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
               <div className="flex items-center space-x-3 mb-3">
-                <Wallet className="w-5 h-5 text-[#002c6c]" />
-                <h3 className="font-semibold text-[#002c6c]">Wallet Balance</h3>
+                <Wallet className="w-5 h-5 text-[#0a2e16]" />
+                <h3 className="font-semibold text-[#0a2e16]">Wallet Balance</h3>
               </div>
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
@@ -143,7 +143,7 @@ const WithdrawFundsModal = ({
                   onClick={() =>
                     setAmount(walletData.withdrawableBalance.toString())
                   }
-                  className="text-xs font-semibold text-[#002c6c] hover:underline"
+                  className="text-xs font-semibold text-[#0a2e16] hover:underline"
                 >
                   Withdraw All
                 </button>
@@ -278,7 +278,7 @@ const WithdrawFundsModal = ({
                     <span className="font-medium text-gray-900">
                       You'll Receive:
                     </span>
-                    <span className="font-bold text-[#002C6C]">
+                    <span className="font-bold text-[#0a2e16]">
                       {formatCurrency(parseInt(amount))}
                     </span>
                   </div>
@@ -299,7 +299,7 @@ const WithdrawFundsModal = ({
 
             <div className="bg-blue-50 rounded-lg p-3 text-xs text-blue-900">
               <p>
-                <strong>Processing Time:</strong> Instant to same FirstBank
+                <strong>Processing Time:</strong> Instant to your Vestora
                 account, up to 24 hours for verification.
               </p>
             </div>
@@ -327,7 +327,7 @@ const WithdrawFundsModal = ({
               <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-8 h-8 text-blue-800" />
               </div>
-              <h3 className="text-lg font-semibold text-[#002c6c] mb-2">
+              <h3 className="text-lg font-semibold text-[#0a2e16] mb-2">
                 Authorize Withdrawal
               </h3>
               <p className="text-gray-600 text-sm">
@@ -350,7 +350,7 @@ const WithdrawFundsModal = ({
                     onChange={(e) =>
                       handleOtpChange(index, e.target.value, otp, setOtp)
                     }
-                    className="w-12 h-12 text-[#002c6c] text-center text-lg font-bold border border-gray-300 rounded-lg focus:border-[#002c6c]"
+                    className="w-12 h-12 text-[#0a2e16] text-center text-lg font-bold border border-gray-300 rounded-lg focus:border-[#0a2e16]"
                   />
                 ))}
               </div>
@@ -400,7 +400,7 @@ const WithdrawFundsModal = ({
             <div className="bg-gray-50 rounded-lg p-4 space-y-2 text-sm">
               <div className="flex justify-between items-center">
                 <span className="text-gray-600">Amount Withdrawn:</span>
-                <span className="font-bold text-[#002C6C] text-base">
+                <span className="font-bold text-[#0a2e16] text-base">
                   {formatCurrency(parseInt(amount))}
                 </span>
               </div>
@@ -442,7 +442,7 @@ const WithdrawFundsModal = ({
             </div>
 
             <div className="space-y-3">
-              <button className="w-full border border-[#002C6C] text-[#002C6C] py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors flex items-center justify-center space-x-2">
+              <button className="w-full border border-[#0a2e16] text-[#0a2e16] py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors flex items-center justify-center space-x-2">
                 <Download size={16} />
                 <span>Download Receipt</span>
               </button>
@@ -454,7 +454,7 @@ const WithdrawFundsModal = ({
               />
               <div className="flex items-center justify-center space-x-2 text-xs text-gray-500">
                 <Shield size={16} />
-                <span>Secured by FirstBank's treasury system</span>
+                <span>Secured by Vestora's treasury system</span>
               </div>
             </div>
           </div>

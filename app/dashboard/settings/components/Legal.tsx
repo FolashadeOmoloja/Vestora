@@ -2,7 +2,7 @@ import { Scale, ChevronRight, Download, AlertCircle } from "lucide-react";
 
 export const Legal = () => (
   <div className="space-y-6">
-    <h3 className="text-xl font-semibold text-[#002C6C] flex items-center gap-2">
+    <h3 className="text-xl font-semibold text-[#0a2e16] flex items-center gap-2">
       <Scale className="w-5 h-5" />
       Legal & Security
     </h3>

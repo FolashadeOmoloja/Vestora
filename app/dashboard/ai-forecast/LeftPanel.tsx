@@ -25,14 +25,14 @@ const profileItems = [
 
 export const UserProfileSummary = () => (
   <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 mb-6">
-    <h2 className="text-lg font-semibold text-[#002C6C] mb-4">
+    <h2 className="text-lg font-semibold text-[#0a2e16] mb-4">
       Your Investment Profile
     </h2>
 
     <div className="space-y-4">
       {profileItems.map(({ icon: Icon, label, value }) => (
         <div key={label} className="flex items-center gap-3">
-          <Icon className="h-5 w-5 text-[#FFD100] text-shadow-2xs" />
+          <Icon className="h-5 w-5 text-[#3db86a] text-shadow-2xs" />
           <div>
             <p className="text-sm text-gray-500">{label}</p>
             <p className="font-semibold">{value}</p>
@@ -50,7 +50,7 @@ const insights = [
 ];
 
 export const AiInsights = () => (
-  <div className="bg-gradient-to-br from-[#002C6C] to-blue-600 rounded-2xl shadow-sm p-6 text-white">
+  <div className="bg-gradient-to-br from-[#0a2e16] to-blue-600 rounded-2xl shadow-sm p-6 text-white">
     <div className="flex items-center gap-2 mb-4">
       <Bot className="h-5 w-5 text-white" />
       <h3 className="font-semibold">AI Insights</h3>

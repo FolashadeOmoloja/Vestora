@@ -36,7 +36,7 @@ const NTBGrowthChart: React.FC = () => {
     if (active && payload && payload.length) {
       const data = payload[0].payload;
       return (
-        <div className="bg-[#002C6C] text-white px-3 py-2 rounded-lg shadow-lg text-sm">
+        <div className="bg-[#0a2e16] text-white px-3 py-2 rounded-lg shadow-lg text-sm">
           <div className="font-medium">{data.timestamp}</div>
           <div className="font-bold">₦{data.value.toLocaleString()}</div>
         </div>
@@ -53,8 +53,8 @@ const NTBGrowthChart: React.FC = () => {
           cx={cx}
           cy={cy}
           r={4}
-          fill="#FFD100"
-          stroke="#003057"
+          fill="#3db86a"
+          stroke="#1a5c2e"
           strokeWidth={2}
         />
       );
@@ -69,7 +69,7 @@ const NTBGrowthChart: React.FC = () => {
         <div>
           <h3 className="text-sm text-gray-500 mb-1">Total Invested Value</h3>
           <div className="flex items-baseline gap-3">
-            <span className="text-3xl font-bold text-[#002C6C]">
+            <span className="text-3xl font-bold text-[#0a2e16]">
               ₦5,250,000
             </span>
             <div className="flex items-center gap-1 text-green-600">
@@ -83,7 +83,7 @@ const NTBGrowthChart: React.FC = () => {
           {/* Chart type toggles */}
           <div className="flex bg-[#F2F2F2] rounded-lg p-1">
             <button className="p-2 rounded-md bg-white shadow-sm">
-              <TrendingUp className="w-4 h-4 text-[#002C6C]" />
+              <TrendingUp className="w-4 h-4 text-[#0a2e16]" />
             </button>
             <button className="p-2 rounded-md">
               <BarChart3 className="w-4 h-4 text-gray-400" />
@@ -98,8 +98,8 @@ const NTBGrowthChart: React.FC = () => {
                 onClick={() => setSelectedPeriod(period.value)}
                 className={`px-3 py-1 text-sm font-medium rounded-md transition-all duration-200 ${
                   selectedPeriod === period.value
-                    ? "bg-white text-[#003057] shadow-sm"
-                    : "text-gray-500 hover:text-[#002C6C]"
+                    ? "bg-white text-[#1a5c2e] shadow-sm"
+                    : "text-gray-500 hover:text-[#0a2e16]"
                 }`}
               >
                 {period.label}
@@ -157,7 +157,7 @@ const NTBGrowthChart: React.FC = () => {
               tickMargin={5}
             />
             <linearGradient id="colorGradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#002C6C" stopOpacity={0.3} />
+              <stop offset="0%" stopColor="#0a2e16" stopOpacity={0.3} />
               <stop offset="50%" stopColor="#4A90E2" stopOpacity={0.2} />
               <stop offset="100%" stopColor="#E6F3FF" stopOpacity={0.1} />
             </linearGradient>
@@ -171,7 +171,7 @@ const NTBGrowthChart: React.FC = () => {
             <Tooltip
               content={<CustomTooltip />}
               cursor={{
-                stroke: "#002C6C",
+                stroke: "#0a2e16",
                 strokeWidth: 1,
                 strokeDasharray: "4 4",
               }}
@@ -180,7 +180,7 @@ const NTBGrowthChart: React.FC = () => {
             <Area
               type="monotone"
               dataKey="value"
-              stroke="#002C6C"
+              stroke="#0a2e16"
               strokeWidth={2}
               dot={false}
               activeDot={<CustomDot />}
@@ -196,10 +196,10 @@ const NTBGrowthChart: React.FC = () => {
       {hoveredPoint && (
         <div className="mt-4 p-3 bg-[#F2F2F2] rounded-lg transition-all duration-200">
           <div className="flex items-center justify-between">
-            <span className="text-sm text-[#002C6C]">
+            <span className="text-sm text-[#0a2e16]">
               {hoveredPoint.timestamp}
             </span>
-            <span className="font-bold text-[#003057]">
+            <span className="font-bold text-[#1a5c2e]">
               ₦{hoveredPoint.value.toLocaleString()}
             </span>
           </div>

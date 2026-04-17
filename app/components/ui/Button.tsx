@@ -16,11 +16,11 @@ const Button = ({
   disabled = false,
 }: ButtonProps) => {
   const baseClasses =
-    "p-4  duration-200  rounded-lg text-base font-semibold transition-all duration-200 hover:scale-[0.98] hover:shadow-lg hover:shadow-indigo-500/25";
+    "p-4 duration-200 rounded-lg text-base font-semibold transition-all duration-200 hover:scale-[0.98] hover:shadow-lg hover:shadow-[#3db86a]/20";
   const variantClasses =
     variant === "outline"
-      ? "border border-[#002C6C] bg-white text-gray-700 hover:shadow-lg hover:shadow-blue-700/25"
-      : "bg-[#002C6C] text-white hover:bg-[#001a4d] hover:shadow-lg hover:shadow-blue-700/40";
+      ? "border border-[#3db86a] bg-white text-[#0a2e16] hover:bg-[#f4faf6] hover:shadow-lg hover:shadow-[#3db86a]/15"
+      : "bg-[#3db86a] text-white hover:bg-[#35a55e] hover:shadow-lg hover:shadow-[#3db86a]/35";
 
   return (
     <button
@@ -61,12 +61,12 @@ export const DashboardBtn = ({
       ? ` ${
           disabled
             ? "border-2 border-gray-300 text-gray-500 cursor-not-allowed"
-            : "border-2 border-[#002C6C] bg-white text-gray-700 hover:shadow-lg hover:shadow-blue-700/25"
+            : "border-2 border-[#3db86a] bg-white text-[#0a2e16] hover:bg-[#f4faf6] hover:shadow-lg hover:shadow-[#3db86a]/15"
         }  `
       : ` ${
           disabled
             ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-            : "bg-[#002C6C] hover:bg-[#001a4d] text-white shadow-md hover:shadow-lg "
+            : "bg-[#3db86a] hover:bg-[#35a55e] text-white shadow-md hover:shadow-lg "
         }  `;
 
   return (
@@ -79,7 +79,7 @@ export const DashboardBtn = ({
       {showYellowDot && loading === false && (
         <span
           className={`w-2 h-2  rounded-full ${
-            disabled ? "bg-gray-500" : "bg-[#FFD100]"
+            disabled ? "bg-gray-500" : "bg-white/90"
           }`}
         ></span>
       )}

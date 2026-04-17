@@ -47,7 +47,7 @@ export const MyNtbColumn: MyNTBCol[] = [
           value === "Active"
             ? "text-green-600"
             : value === "Matured"
-            ? "text-[#002C6C]"
+            ? "text-[#0a2e16]"
             : value === "Pending"
             ? "text-yellow-600"
             : "text-gray-400"
@@ -61,7 +61,7 @@ export const MyNtbColumn: MyNTBCol[] = [
     header: "POI",
     accessor: "poi",
     cell: (_: any, row: MyNTBRow) => (
-      <button className="text-[#002C6C] border border-[#002C6C] px-2 py-1 rounded text-sm">
+      <button className="text-[#0a2e16] border border-[#0a2e16] px-2 py-1 rounded text-sm">
         Download
       </button>
     ),
@@ -135,7 +135,7 @@ export const NTBColumn = ({
     header: "Rate (%)",
     accessor: "rate",
     cell: (value: string) => (
-      <div className="text-sm font-semibold text-[#002C6C]">{value}</div>
+      <div className="text-sm font-semibold text-[#0a2e16]">{value}</div>
     ),
   },
   {
@@ -143,7 +143,7 @@ export const NTBColumn = ({
     accessor: "description",
     cell: (_: any, row: NTBRow) => (
       <div>
-        <div className="text-sm font-semibold text-[#002C6C]">{row.id}</div>
+        <div className="text-sm font-semibold text-[#0a2e16]">{row.id}</div>
         <div className="text-xs text-gray-500">{row.description}</div>
         <div className="text-xs text-gray-400">{row.code}</div>
         <div className="text-xs text-red-500 ">Deadline: {row.deadline}</div>

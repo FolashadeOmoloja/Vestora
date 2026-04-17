@@ -71,7 +71,7 @@ const DocumentUpload = ({
     const file = formData.documents[type];
 
     return (
-      <div className="space-y-2 text-[#002C6C]">
+      <div className="space-y-2 text-[#0a2e16]">
         <label className="block text-sm font-medium">
           {label} {required && <span className="text-red-500">*</span>}
         </label>
@@ -127,7 +127,7 @@ const DocumentUpload = ({
   };
   return (
     <div>
-      <h3 className="text-lg font-semibold text-[#002C6C] mb-4">
+      <h3 className="text-lg font-semibold text-[#0a2e16] mb-4">
         Required Documents
       </h3>
 
@@ -176,7 +176,7 @@ const DocumentUpload = ({
         <div className="text-center pt-4">
           <p className="text-sm text-gray-500">
             Need help with document requirements?
-            <span className="text-[#002C6C] font-medium cursor-pointer hover:underline ml-1">
+            <span className="text-[#0a2e16] font-medium cursor-pointer hover:underline ml-1">
               View guidelines
             </span>
           </p>

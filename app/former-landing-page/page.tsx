@@ -9,7 +9,7 @@ import {
   FaChartLine,
 } from "react-icons/fa";
 
-export default function FirstBankCTA() {
+export default function VestoraCTA() {
   const [invest, showInvest] = useState(false);
   const router = useRouter();
 
@@ -20,7 +20,7 @@ export default function FirstBankCTA() {
           {/* Navbar */}
           <nav className="flex items-center justify-between px-8 py-4 border-b border-gray-200">
             <div className="text-2xl font-bold">
-              FirstBank <span className="text-[#FFD100]">Treasury </span>
+              Vestora
             </div>
             <div className="hidden md:flex gap-8 text-sm font-medium">
               <a href="#">Home</a>
@@ -47,7 +47,7 @@ export default function FirstBankCTA() {
               </h2>
               <p className="text-lg max-w-2xl mx-auto mb-8">
                 A secure digital platform to access Nigerian Treasury Bills.
-                Backed by FirstBank, simplified by technology.
+                Backed by Vestora, simplified by technology.
               </p>
               <div className="space-x-4">
                 <button className="bg-[#002C6C] cursor-pointer text-white px-4 py-3 rounded">
@@ -109,7 +109,7 @@ export default function FirstBankCTA() {
                   <FaShieldAlt className="text-4xl text-[#FFD100] mx-auto mb-4" />
                   <h4 className="font-bold mb-2">Secure & Reliable</h4>
                   <p className="text-sm text-gray-700">
-                    Built on FirstBank’s trusted infrastructure and protected
+                    Built on Vestora’s trusted infrastructure and protected
                     with enterprise-grade security.
                   </p>
                 </div>
@@ -117,7 +117,7 @@ export default function FirstBankCTA() {
                   <FaFileDownload className="text-4xl text-[#FFD100] mx-auto mb-4" />
                   <h4 className="font-bold mb-2">Proof of Investment</h4>
                   <p className="text-sm text-gray-700">
-                    Instantly download your First Bank-branded Proof of
+                    Instantly download your Vestora-branded Proof of
                     Investment (POI) upon purchase.
                   </p>
                 </div>
@@ -154,10 +154,10 @@ export default function FirstBankCTA() {
               </div>
               <div>
                 <h6 className="font-semibold">
-                  Can I access this if I don’t have a FirstBank account?
+                  Can I access this if I don’t have a Vestora account?
                 </h6>
                 <p>
-                  This service is currently for FirstBank account holders only.
+                  This service is currently for Vestora account holders only.
                 </p>
               </div>
               <div>
@@ -173,7 +173,7 @@ export default function FirstBankCTA() {
           {/* Footer */}
           <footer className="bg-[#002C6C] text-white text-center py-6">
             <p>
-              &copy; {new Date().getFullYear()} FirstBank. All rights reserved.
+              &copy; {new Date().getFullYear()} Vestora. All rights reserved.
             </p>
           </footer>
         </section>

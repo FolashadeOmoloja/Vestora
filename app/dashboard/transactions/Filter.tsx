@@ -18,12 +18,12 @@ export const TranscationFilter = ({
   Icon: React.ElementType;
 }) => {
   return (
-    <div className="relative text-[#002C6C]">
+    <div className="relative text-[#0a2e16]">
       <button
         onClick={onClick}
         className="flex items-center gap-2 px-4 h-[48px]  bg-white rounded-lg shadow"
       >
-        {Icon && <Icon className="h-4 w-4 text-[#FFD100] font-semibold" />}
+        {Icon && <Icon className="h-4 w-4 text-[#3db86a] font-semibold" />}
         <span className="text-sm">
           {filterName}: <span className="font-medium">{filter}</span>
         </span>

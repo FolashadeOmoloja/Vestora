@@ -91,8 +91,8 @@ const OTPInput = ({ length = 6, value, onChange }: OTPInputProps) => {
           onPaste={handlePaste}
           className={`w-12 h-12 text-center text-lg font-semibold border-2 rounded-lg focus:outline-none transition-all duration-200 ${
             digit
-              ? "border-[#002C6C] bg-blue-50 text-[#002C6C]"
-              : "border-gray-300 hover:border-gray-400 focus:border-[#002C6C]"
+              ? "border-[#3db86a] bg-[#e8f5ed] text-[#0a2e16]"
+              : "border-gray-300 hover:border-gray-400 focus:border-[#3db86a]"
           }`}
         />
       ))}

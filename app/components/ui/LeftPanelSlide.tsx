@@ -15,10 +15,10 @@ const LeftPanelSlide = () => {
   ];
 
   const slideColors = [
-    "bg-[#FFD100]",
-    "bg-teal-500",
-    "bg-amber-500",
-    "bg-slate-400",
+    "bg-[#3db86a]",
+    "bg-[#1a5c2e]",
+    "bg-[#2d6b47]",
+    "bg-[#0a2e16]",
   ];
   useEffect(() => {
     const interval = setInterval(() => {
@@ -33,7 +33,7 @@ const LeftPanelSlide = () => {
   };
 
   return (
-    <div className="hidden md:flex-1 md:flex flex-col justify-center items-center relative bg-[#002C6C] bg-opacity-10 backdrop-blur-md">
+    <div className="hidden md:flex-1 md:flex flex-col justify-center items-center relative bg-[#0a2e16] min-h-screen">
       {/* Small text display box */}
       <div className="w-4/5 max-w-lg h-16 relative rounded-2xl  mb-6">
         {slides.map((slide, index) => (
