@@ -4,19 +4,22 @@ import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 const TESTIMONIALS = [
   {
-    quote: "I moved from keeping money in a savings account to diversifying across T-Bills and a mutual fund. My returns tripled in one year.",
+    quote:
+      "I moved from keeping money in a savings account to diversifying across T-Bills and a mutual fund. My returns tripled in one year.",
     name: "Adebayo Ogundimu",
     role: "Software Engineer, Lagos",
     initials: "AO",
   },
   {
-    quote: "The stock investing feature is exactly what I needed. I can now own NSE stocks directly without going through a stockbroker.",
+    quote:
+      "The stock investing feature is exactly what I needed. I can now own NSE stocks directly without going through a stockbroker.",
     name: "Ngozi Eze",
     role: "Business Owner, Abuja",
     initials: "NE",
   },
   {
-    quote: "Auto-rollover on my T-Bills means I never miss a reinvestment window. The platform basically manages itself.",
+    quote:
+      "Auto-rollover on my T-Bills means I never miss a reinvestment window. The platform basically manages itself.",
     name: "Chukwuemeka Obi",
     role: "Finance Analyst, Port Harcourt",
     initials: "CO",
@@ -55,7 +58,9 @@ export default function Testimonials() {
         {/* Navigation */}
         <div className="flex items-center justify-center gap-4">
           <button
-            onClick={() => setIdx((idx - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)}
+            onClick={() =>
+              setIdx((idx - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)
+            }
             className="w-8 h-8 rounded-full border border-white/25 flex items-center justify-center text-white/60 hover:border-white/60 hover:text-white transition-colors"
           >
             <ChevronLeft size={14} />
