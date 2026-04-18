@@ -1,8 +1,22 @@
+import Logo from "./Logo";
+
 const LINKS = {
-  Products: ["Treasury Bills", "Mutual Funds", "Stocks", "ETFs", "Bonds", "Fixed Deposits"],
+  Products: [
+    "Treasury Bills",
+    "Mutual Funds",
+    "Stocks",
+    "ETFs",
+    "Bonds",
+    "Fixed Deposits",
+  ],
   Company: ["About Us", "Careers", "Press", "Blog"],
   Support: ["Help Center", "Contact Us", "FAQ", "Status"],
-  Legal: ["Terms & Conditions", "Privacy Policy", "CBN Disclaimers", "Risk Disclosure"],
+  Legal: [
+    "Terms & Conditions",
+    "Privacy Policy",
+    "CBN Disclaimers",
+    "Risk Disclosure",
+  ],
 };
 
 export default function Footer() {
@@ -12,11 +26,10 @@ export default function Footer() {
         <div className="grid md:grid-cols-5 gap-10 mb-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <p className="text-white text-lg font-semibold mb-3">
-              Vest<span className="text-[#3db86a]">ora</span>
-            </p>
+            <Logo />
             <p className="text-white/35 text-xs leading-relaxed mb-4">
-              Multi-asset investment platform backed by Vestora. CBN licensed and NDIC protected.
+              Multi-asset investment platform backed by Vestora. CBN licensed
+              and NDIC protected.
             </p>
             <div className="flex gap-2">
               {["iOS", "Android"].map((p) => (
@@ -33,11 +46,16 @@ export default function Footer() {
           {/* Link columns */}
           {Object.entries(LINKS).map(([title, items]) => (
             <div key={title}>
-              <h4 className="text-white/70 text-xs font-semibold mb-4 uppercase tracking-wide">{title}</h4>
+              <h4 className="text-white/70 text-xs font-semibold mb-4 uppercase tracking-wide">
+                {title}
+              </h4>
               <ul className="space-y-2.5">
                 {items.map((item) => (
                   <li key={item}>
-                    <a href="#" className="text-white/35 text-xs hover:text-white/70 transition-colors">
+                    <a
+                      href="#"
+                      className="text-white/35 text-xs hover:text-white/70 transition-colors"
+                    >
                       {item}
                     </a>
                   </li>
@@ -52,7 +70,8 @@ export default function Footer() {
             © 2025 Vestora. Licensed by the Central Bank of Nigeria.
           </p>
           <p className="text-white/20 text-xs max-w-sm text-right">
-            Investments involve risk. Past performance does not guarantee future returns.
+            Investments involve risk. Past performance does not guarantee future
+            returns.
           </p>
         </div>
       </div>

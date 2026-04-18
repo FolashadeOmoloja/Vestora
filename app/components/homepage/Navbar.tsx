@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
+
 import { Menu, X } from "lucide-react";
+import Logo from "./Logo";
 
 interface NavbarProps {
   onLogin?: () => void;
@@ -14,9 +16,7 @@ export default function Navbar({ onLogin, onSignup }: NavbarProps) {
     <nav className="sticky top-0 z-50 bg-[#0a2e16] border-b border-white/8">
       <div className="max-w-6xl mx-auto px-6 h-[60px] flex items-center justify-between">
         {/* Logo */}
-        <span className="text-white text-xl font-semibold tracking-tight">
-          Vest<span className="text-[#3db86a]">ora</span>
-        </span>
+        <Logo />
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-7">
