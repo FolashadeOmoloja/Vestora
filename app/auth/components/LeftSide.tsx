@@ -1,3 +1,4 @@
+import Logo from "@/app/components/homepage/Logo";
 import React, { useEffect, useState } from "react";
 
 const LeftSide = () => {
@@ -49,9 +50,9 @@ const LeftSide = () => {
       <div className="relative z-10 flex flex-col justify-center items-center h-full w-full p-12 text-center">
         <div className="max-w-sm w-full mx-auto">
           <div className="inline-flex items-center gap-2 bg-[#3db86a]/15 border border-[#3db86a]/30 text-[#3db86a] text-xs px-3 py-1.5 rounded-full mb-8">
-            Vestora · Treasury &amp; beyond
+            <Logo /> · Treasury &amp; beyond
           </div>
-          <div className="relative min-h-[280px] overflow-hidden">
+          <div className="relative min-h-70 overflow-hidden">
             {slides.map((slide, index) => (
               <div
                 key={index}

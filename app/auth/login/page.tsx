@@ -29,7 +29,7 @@ const LoginPage = ({ onLogin, onSignUp, onForgotPassword }: LoginPageProps) => {
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
   const [errors, setErrors] = useState<{ email?: string; password?: string }>(
-    {}
+    {},
   );
   const [isLoading, setIsLoading] = useState(false);
   const [step, setStep] = useState<"login" | "otp" | "success">("login");
@@ -350,8 +350,8 @@ const LoginOtpVerification = ({
                   error
                     ? "border-red-300 bg-red-50"
                     : digit
-                    ? "border-[#3db86a] bg-[#e8f5ed]"
-                    : "border-gray-200 hover:border-gray-300"
+                      ? "border-[#3db86a] bg-[#e8f5ed]"
+                      : "border-gray-200 hover:border-gray-300"
                 }`}
               />
             ))}
@@ -397,7 +397,7 @@ const LoginOtpVerification = ({
           <div className="flex space-x-4">
             <button
               onClick={onBack}
-              className="w-[200px] flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg font-medium text-gray-700 hover:border-gray-300 transition-all"
+              className="w-50 flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg font-medium text-gray-700 hover:border-gray-300 transition-all"
             >
               <ArrowLeft className="w-4 h-4 mr-2 inline" />
               Back

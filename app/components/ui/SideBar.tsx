@@ -11,6 +11,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
+import Logo from "../homepage/Logo";
 
 interface NavItem {
   id: string;
@@ -103,15 +104,15 @@ const Sidebar: React.FC<SidebarProps> = ({
       >
         <div className="flex items-center justify-between mb-8 relative">
           <div className={`transition-opacity duration-300 `}>
-            <h2
+            <div
               className={`${
                 isCollapsed
                   ? "opacity-0 transition-all duration-300"
                   : "opacity-100 text-xl font-semibold tracking-tight text-white transition-all duration-500"
               } `}
             >
-              Vest<span className="text-[#3db86a]">ora</span>
-            </h2>
+              <Logo />
+            </div>
           </div>
 
           <button

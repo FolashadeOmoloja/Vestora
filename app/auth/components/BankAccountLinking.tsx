@@ -79,7 +79,7 @@ const BankAccountLinking = ({
   ];
 
   const filteredBanks = banks.filter((bank) =>
-    bank.name.toLowerCase().includes(searchTerm.toLowerCase())
+    bank.name.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   const handleBankSelect = (bank: Bank) => {
@@ -103,7 +103,7 @@ const BankAccountLinking = ({
   const handleNameInquiry = async () => {
     if (!selectedBank || accountNumber.length !== 10) {
       setError(
-        "Please select a bank and enter a valid 10-digit account number"
+        "Please select a bank and enter a valid 10-digit account number",
       );
       return;
     }
@@ -122,7 +122,7 @@ const BankAccountLinking = ({
         setVerificationStatus("error");
       } else if (accountNumber === "1111111111") {
         setError(
-          "Unable to verify account at this time. Please try again later."
+          "Unable to verify account at this time. Please try again later.",
         );
         setVerificationStatus("error");
       } else {
@@ -170,7 +170,7 @@ const BankAccountLinking = ({
   const steps = [
     { label: "Link", icon: <FaLink /> },
     { label: "Details", icon: <FaFingerprint /> },
-    { label: "Documents", icon: <FaRegAddressCard /> },
+    { label: "Docs", icon: <FaRegAddressCard /> },
     { label: "Verification", icon: <FaKey /> },
   ];
 
@@ -339,14 +339,14 @@ const BankAccountLinking = ({
               <Button
                 onClick={onBack}
                 variant="outline"
-                className="min-w-[200px] flex items-center justify-center"
+                className="min-w-50 flex items-center justify-center"
               >
                 <ArrowLeft className="w-5 h-5 mr-2" />
                 Back
               </Button>
               <Button
                 onClick={handleContinue}
-                className="min-w-[200px] flex items-center justify-center"
+                className="min-w-50 flex items-center justify-center"
                 disabled={!canContinue}
               >
                 Next
@@ -368,7 +368,10 @@ const BankAccountLinking = ({
       ) : step === 2 ? (
         <PersonalDetailsDemo nextStep={step} setStep={setStep} />
       ) : step === 3 ? (
-        <DocumentUpload setStep={setStep} />
+        <DocumentUpload
+          onContinue={() => setStep(4)}
+          onBack={() => setStep(2)}
+        />
       ) : step == 4 ? (
         <div className="space-y-2">
           <label className="block text-sm font-medium">Enter OTP</label>
@@ -381,13 +384,13 @@ const BankAccountLinking = ({
             <Button
               onClick={() => setStep(3)}
               variant="outline"
-              className="min-w-[200px] flex items-center justify-center"
+              className="min-w-50 flex items-center justify-center"
             >
               <ArrowLeft className="w-5 h-5 mr-2" />
               Back
             </Button>
             <Button
-              className="min-w-[200px] flex items-center justify-center"
+              className="min-w-50 flex items-center justify-center"
               type="submit"
             >
               Complete Signup

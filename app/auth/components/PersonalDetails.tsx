@@ -4,32 +4,16 @@ import {
   ArrowRight,
   ArrowLeft,
   User,
-  Mail,
   Phone,
   Eye,
   EyeOff,
   CheckCircle,
   AlertCircle,
 } from "lucide-react";
-import DocumentUpload from "./DocumentUpload";
 import Button from "@/app/components/ui/Button";
 
-// Types
-interface PersonalDetailsProps {
-  onContinue: (data: PersonalDetailsData) => void;
-  onBack: () => void;
-  linkedAccount?: {
-    bank: string;
-    accountNumber: string;
-    accountName: string;
-  };
-  step: number;
-  setStep: React.Dispatch<React.SetStateAction<number>>;
-}
-
-interface PersonalDetailsData {
+export interface PersonalDetailsData {
   fullName: string;
-  email: string;
   phoneNumber: string;
   bvn: string;
   nin: string;
@@ -38,6 +22,18 @@ interface PersonalDetailsData {
     utilityBill: File | null;
     passport: File | null;
   };
+}
+
+interface PersonalDetailsProps {
+  onContinue: (data: PersonalDetailsData) => void;
+  onBack: () => void;
+  linkedAccount?: {
+    bank: string;
+    accountNumber: string;
+    accountName: string;
+  };
+  step?: number;
+  setStep?: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const PersonalDetails = ({
@@ -49,7 +45,6 @@ const PersonalDetails = ({
 }: PersonalDetailsProps) => {
   const [formData, setFormData] = useState<PersonalDetailsData>({
     fullName: linkedAccount?.accountName || "",
-    email: "",
     phoneNumber: "",
     bvn: "",
     nin: "",
@@ -68,7 +63,7 @@ const PersonalDetails = ({
   // Handle input changes
   const handleInputChange = (
     field: keyof Omit<PersonalDetailsData, "documents">,
-    value: string
+    value: string,
   ) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
     // Clear error when user starts typing
@@ -103,7 +98,7 @@ const PersonalDetails = ({
     if (phone.startsWith("234") && phone.length >= 6) {
       return `+${phone.slice(0, 3)} ${phone.slice(3, 6)} ${phone.slice(
         6,
-        9
+        9,
       )} ${phone.slice(9)}`.trim();
     }
     return phone;
@@ -129,12 +124,6 @@ const PersonalDetails = ({
       newErrors.fullName = "Full name is required";
     } else if (formData.fullName.trim().length < 2) {
       newErrors.fullName = "Full name must be at least 2 characters";
-    }
-
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email address";
     }
 
     if (!formData.phoneNumber) {
@@ -188,12 +177,10 @@ const PersonalDetails = ({
   };
 
   const isFormValid =
-    !Object.keys(errors).length &&
-    formData.fullName &&
-    formData.email &&
-    formData.bvn &&
-    formData.nin;
-  console.log(step);
+    formData.fullName.trim().length >= 2 &&
+    formData.phoneNumber.length >= 10 &&
+    formData.bvn.length === 11 &&
+    formData.nin.length === 11;
   return (
     <div>
       <div>
@@ -234,7 +221,7 @@ const PersonalDetails = ({
                       handleInputChange("fullName", e.target.value)
                     }
                     placeholder="Enter your full name as on ID"
-                    className={`form-input !pl-10 ${
+                    className={`form-input pl-10! ${
                       errors.fullName
                         ? "border-red-300 focus:border-red-500"
                         : "border-gray-200 focus:border-[#3db86a]"
@@ -245,33 +232,6 @@ const PersonalDetails = ({
                   <p className="text-sm text-red-600 flex items-center">
                     <AlertCircle className="w-4 h-4 mr-1" />
                     {errors.fullName}
-                  </p>
-                )}
-              </div>
-
-              {/* Email */}
-              <div className="space-y-2">
-                <label className="block text-sm font-medium">
-                  Email Address <span className="text-red-500">*</span>
-                </label>
-                <div className="relative">
-                  <Mail className="absolute left-3 top-5 w-5 h-5 text-gray-400" />
-                  <input
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => handleInputChange("email", e.target.value)}
-                    placeholder="Enter your email address"
-                    className={`form-input !pl-10 ${
-                      errors.email
-                        ? "border-red-300 focus:border-red-500"
-                        : "border-gray-200 focus:border-[#3db86a]"
-                    }`}
-                  />
-                </div>
-                {errors.email && (
-                  <p className="text-sm text-red-600 flex items-center">
-                    <AlertCircle className="w-4 h-4 mr-1" />
-                    {errors.email}
                   </p>
                 )}
               </div>
@@ -288,7 +248,7 @@ const PersonalDetails = ({
                     value={formatPhoneDisplay(formData.phoneNumber)}
                     onChange={(e) => handlePhoneChange(e.target.value)}
                     placeholder="+234 XXX XXX XXXX"
-                    className={`form-input !pl-10 ${
+                    className={`form-input pl-10! ${
                       errors.phoneNumber
                         ? "border-red-300 focus:border-red-500"
                         : "border-gray-200 focus:border-[#3db86a]"
@@ -325,12 +285,12 @@ const PersonalDetails = ({
                     onChange={(e) => handleBvnChange(e.target.value)}
                     placeholder="Enter your 11-digit BVN"
                     maxLength={11}
-                    className={`form-input`}
+                    className="form-input pr-11"
                   />
                   <button
                     type="button"
                     onClick={() => setShowBvn(!showBvn)}
-                    className="absolute right-3 top-5 text-gray-400 hover:text-gray-600"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
                   >
                     {showBvn ? (
                       <EyeOff className="w-5 h-5" />
@@ -363,12 +323,12 @@ const PersonalDetails = ({
                     onChange={(e) => handleNinChange(e.target.value)}
                     placeholder="Enter your 11-digit NIN"
                     maxLength={11}
-                    className={`form-input`}
+                    className="form-input pr-11"
                   />
                   <button
                     type="button"
                     onClick={() => setShowNin(!showNin)}
-                    className="absolute right-3 top-5 text-gray-400 hover:text-gray-600"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
                   >
                     {showNin ? (
                       <EyeOff className="w-5 h-5" />
@@ -395,14 +355,14 @@ const PersonalDetails = ({
             <Button
               onClick={onBack}
               variant="outline"
-              className="min-w-[200px] flex items-center justify-center"
+              className="min-w-50 flex items-center justify-center"
             >
               <ArrowLeft className="w-5 h-5 mr-2" />
               Back
             </Button>
             <Button
               onClick={handleContinue}
-              className="min-w-[200px] flex items-center justify-center"
+              className="min-w-50 flex items-center justify-center"
               disabled={!isFormValid || isValidating}
             >
               Next
@@ -465,3 +425,5 @@ export default function PersonalDetailsDemo({
     />
   );
 }
+
+export { PersonalDetails };

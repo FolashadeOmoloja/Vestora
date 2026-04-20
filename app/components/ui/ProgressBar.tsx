@@ -49,12 +49,14 @@ const ProgressBar = ({ currentStep, totalSteps, steps }: ProgressBarProps) => {
               {/* Step Labels */}
 
               <div
-                className={`absolute flex gap-2 items-center top-9 text-sm font-medium transition-colors duration-300 ${
+                className={`absolute left-1/2 top-9 flex -translate-x-1/2 items-center gap-2 text-sm font-medium transition-colors duration-300 max-[425px]:gap-0 ${
                   index + 1 <= currentStep ? "text-[#1a5c2e]" : "text-gray-400"
                 }`}
               >
                 {steps[index].icon}
-                <span className="text-xs">{steps[index].label}</span>
+                <span className="text-xs max-[425px]:sr-only">
+                  {steps[index].label}
+                </span>
               </div>
             </div>
           );
